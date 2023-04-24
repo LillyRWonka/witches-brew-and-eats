@@ -39,7 +39,7 @@ const typeDefs = gql`
     _id: ID
     description: String
     users: Users!
-    menus: Menus
+    menus: Menus!
     date: String!
   }
   type MenuResponse {
@@ -62,6 +62,12 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     createUser(userName: String!, email: String!, password: String!): Auth
+    addReview(
+      description: String!
+      date: String!
+      users: ID!
+      menus: ID!
+    ): Reviews
   }
 `;
 module.exports = typeDefs;

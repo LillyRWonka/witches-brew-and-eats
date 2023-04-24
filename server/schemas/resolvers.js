@@ -13,15 +13,21 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    menus: async (parent, args) => {
+    menus: async (parent, args, context) => {
       // Use the parameter to find the matching menu in the collection based on the category id
-      return await Menus.find({ category: args.categoryId });
+      if (context.user) {
+        return await Menus.find({ category: args.categoryId });
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
-    menu: async (parent, args) => {
-      const menu = await Menus.findOne({ _id: args.menuId });
-      const reviews = await Reviews.find({ menus: args.menuId });
+    menu: async (parent, args, context) => {
+      if (context.user) {
+        const menu = await Menus.findOne({ _id: args.menuId });
+        const reviews = await Reviews.find({ menus: args.menuId });
 
-      return { menu, reviews };
+        return { menu, reviews };
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
   Mutation: {
@@ -46,6 +52,19 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addReview: async (parent, { description, date, users, menus }, context) => {
+      if (context.user) {
+        const review = await Reviews.create({
+          description,
+          date,
+          users,
+          menus,
+        });
+
+        return review;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
