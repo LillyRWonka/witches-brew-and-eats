@@ -7,13 +7,15 @@ const typeDefs = gql`
     paymentStatus: Boolean!
     users: Users!
     menus: [Menus]!
+    date: String!
   }
 
   type Users {
     _id: ID
-    username: String!
+    userName: String!
     email: String!
     password: String!
+    pointBalance: Int
     userOrders: [Orders]
   }
 
@@ -39,6 +41,11 @@ const typeDefs = gql`
     description: String
     users: Users!
     menus: Menus
+    date: String!
+  }
+
+  type Query {
+    categories: [Categories]
   }
 `;
 module.exports = typeDefs;
