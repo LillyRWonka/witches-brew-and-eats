@@ -24,6 +24,12 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    createUser: async (parent, { username, email, password }) => {
+      const user = await Users.create({ username, email, password });
+      const token = signToken(user);
+
+      return { token, user };
+    },
   },
 };
 
