@@ -42,6 +42,10 @@ const typeDefs = gql`
     menus: Menus
     date: String!
   }
+  type MenuResponse {
+    menu: Menus
+    reviews: [Reviews]
+  }
 
   type Auth {
     token: String
@@ -52,6 +56,7 @@ const typeDefs = gql`
     categories: [Categories]
     orders: [Orders]
     menus(categoryId: ID!): [Menus]
+    menu(menuId: ID!): MenuResponse
   }
 
   type Mutation {
