@@ -20,14 +20,6 @@ const userSchema = new Schema({
   pointBalance: {
     type: Number,
   },
-
-  // set userOrders to be an array of data that reference to Orders
-  userOrders: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Orders",
-    },
-  ],
 });
 
 // hash user password
