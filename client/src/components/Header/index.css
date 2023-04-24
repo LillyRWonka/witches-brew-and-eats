@@ -1,0 +1,20 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  header{
+    background-image: linear-gradient(to bottom right, rgb(56, 189, 56), yellow);
+     
+  }
+  .input{
+float: right;
+  padding: 6px;
+  display:block;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  }
