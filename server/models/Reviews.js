@@ -12,6 +12,7 @@ const reviewsSchema = new Schema({
   menus: {
     type: Schema.Types.ObjectId,
     ref: "Menus",
+    required: true,
   },
 });
 
