@@ -12,7 +12,7 @@ const menusSchema = new Schema({
   },
   image: {
     type: String,
-    required: true,
+    // required: true,
   },
   price: {
     type: Number,
