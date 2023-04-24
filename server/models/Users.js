@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
-  username: {
+  userName: {
     type: String,
     required: true,
     unique: true,
@@ -17,7 +17,11 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  // set userOrders to be an array of data that adheres to the orderSchema
+  pointBalance: {
+    type: Number,
+  },
+
+  // set userOrders to be an array of data that reference to Orders
   userOrders: [
     {
       type: Schema.Types.ObjectId,

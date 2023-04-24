@@ -14,6 +14,10 @@ const ordersSchema = new Schema({
     ref: "Users",
     required: true,
   },
+  date: {
+    type: Date,
+    required: true,
+  },
   menus: [
     {
       type: Schema.Types.ObjectId,
