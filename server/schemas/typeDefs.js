@@ -51,6 +51,7 @@ const typeDefs = gql`
   type Query {
     categories: [Categories]
     orders: [Orders]
+    menus(categoryId: ID!): [Menus]
   }
 
   type Mutation {

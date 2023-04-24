@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { Categories, Users, Orders } = require("../models");
+const { Categories, Users, Orders, Menus } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -12,6 +12,10 @@ const resolvers = {
         return Orders.find({ users: context.user._id });
       }
       throw new AuthenticationError("You need to be logged in!");
+    },
+    menus: async (parent, args) => {
+      // Use the parameter to find the matching menu in the collection based on the category id
+      return await Menus.find({ category: args.categoryId });
     },
   },
   Mutation: {
