@@ -16,7 +16,6 @@ const typeDefs = gql`
     email: String!
     password: String!
     pointBalance: Int
-    userOrders: [Orders]
   }
 
   type Categories {
@@ -51,6 +50,7 @@ const typeDefs = gql`
 
   type Query {
     categories: [Categories]
+    orders: [Orders]
   }
 
   type Mutation {

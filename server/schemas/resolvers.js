@@ -1,10 +1,17 @@
-const { Categories, Users } = require("../models");
+const { AuthenticationError } = require("apollo-server-express");
+const { Categories, Users, Orders } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     categories: async () => {
       return await Categories.find({});
+    },
+    orders: async (parent, args, context) => {
+      if (context.user) {
+        return Orders.find({ users: context.user._id });
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
   Mutation: {
