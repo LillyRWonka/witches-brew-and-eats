@@ -16,7 +16,6 @@ const typeDefs = gql`
     email: String!
     password: String!
     pointBalance: Int
-    userOrders: [Orders]
   }
 
   type Categories {
@@ -40,12 +39,35 @@ const typeDefs = gql`
     _id: ID
     description: String
     users: Users!
-    menus: Menus
+    menus: Menus!
     date: String!
+  }
+  type MenuResponse {
+    menu: Menus
+    reviews: [Reviews]
+  }
+
+  type Auth {
+    token: String
+    user: Users
   }
 
   type Query {
     categories: [Categories]
+    orders: [Orders]
+    menus(categoryId: ID!): [Menus]
+    menu(menuId: ID!): MenuResponse
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    createUser(userName: String!, email: String!, password: String!): Auth
+    addReview(
+      description: String!
+      date: String!
+      users: ID!
+      menus: ID!
+    ): Reviews
   }
 `;
 module.exports = typeDefs;
