@@ -57,6 +57,8 @@ const typeDefs = gql`
     orders: [Orders]
     menus(categoryId: ID!): [Menus]
     menu(menuId: ID!): MenuResponse
+    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
+   me: Users
   }
 
   type Mutation {
