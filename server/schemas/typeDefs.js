@@ -52,11 +52,16 @@ const typeDefs = gql`
     user: Users
   }
 
+  type Checkout {
+    session: ID
+  }
+
   type Query {
     categories: [Categories]
     orders: [Orders]
     menus(categoryId: ID!): [Menus]
     menu(menuId: ID!): MenuResponse
+    checkout(menus: [ID]!): Checkout
   }
 
   type Mutation {

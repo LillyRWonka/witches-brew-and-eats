@@ -7,6 +7,7 @@ const reviewsSchema = new Schema({
   date: {
     type: Date,
     required: true,
+    default: Date.now,
   },
   users: {
     type: Schema.Types.ObjectId,
