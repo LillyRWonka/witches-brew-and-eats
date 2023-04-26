@@ -103,6 +103,25 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    addOrder: async (parent, args, context) => {
+      if (context.user) {
+        const order = new Orders({ menus: args.menus });
+        let total_price = 0;
+
+        const { menus } = await order.populate("menus");
+
+        for (let i = 0; i < menus.length; i++) {
+          total_price += menus[0].price;
+        }
+        order.totalPrice = total_price;
+        order.users = context.user._id;
+        order.paymentStatus = true;
+        order.save();
+
+        return order;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
   },
 };
 
