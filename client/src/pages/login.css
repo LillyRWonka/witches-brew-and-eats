@@ -1,0 +1,49 @@
+@media (min-width: 1025px) {
+    .h-custom-2 {
+      height: 100%;
+      }
+    }
+    
+    .img-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 200px;
+      height: 200px;
+    }
+    
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .fiveWitches {
+      position: fixed;
+      top: 170px;
+      right: 100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      clear:left;
+    }
+    .fiveWitches img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .submitbutton {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #189634;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      box-shadow: 0 0 10px #087a08;
+      transition: box-shadow 0.3s ease-out;
+    }
+    .submitbutton:hover {
+      box-shadow: 0 0 20px #12aa19;
+    }
