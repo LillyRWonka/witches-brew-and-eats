@@ -76,6 +76,7 @@ const typeDefs = gql`
       menus: ID!
     ): Reviews
     addOrder(menus: [ID]!): Orders
+    deleteReview(review: ID!): Reviews
   }
 `;
 module.exports = typeDefs;

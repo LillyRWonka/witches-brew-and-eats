@@ -131,6 +131,12 @@ const resolvers = {
       }
       throw new AuthenticationError("Not logged in");
     },
+    deleteReview: async (parent, args, context) => {
+      if (context.user) {
+        return Reviews.deleteOne({ _id: args.review });
+      }
+      throw new AuthenticationError("Not logged in");
+    },
   },
 };
 
