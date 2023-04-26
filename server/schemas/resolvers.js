@@ -10,7 +10,9 @@ const resolvers = {
     },
     orders: async (parent, args, context) => {
       if (context.user) {
-        return Orders.find({ users: context.user._id });
+        return Orders.find({ users: context.user._id })
+          .populate({ path: "menus", populate: { path: "category" } })
+          .populate("users");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
