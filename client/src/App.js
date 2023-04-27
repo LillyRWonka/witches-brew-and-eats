@@ -13,6 +13,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
+import Stripe from "./pages/Stripe";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -49,6 +50,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/stripe" element={<Stripe />} />
             </Routes>
           </div>
           <Footer />
