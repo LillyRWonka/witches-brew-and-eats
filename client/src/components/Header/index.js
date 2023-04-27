@@ -18,7 +18,7 @@ const Header = () => {
         <div>
           <Link className="text-dark" to="/">
           <img src={logo} alt="Logo" className='logo' />
-             <h1 className="m-0">Witches Brew and Eats</h1>             
+             <h2 className="m-0 animate__animated animate__zoomIn">Witches Brew and Eats</h2>             
           </Link>
          </div>
         <div>
@@ -33,15 +33,17 @@ const Header = () => {
             </>
           ) : (
             <>            
-             <input type="text" placeholder="Search.."/>
-              <Link className="btn btn-lg m-2 text-dark" to="/login">
+             <input className="search-box"type="text" placeholder="Search..."/>
+              <Link className="btn btn-lg m-2 text-dark animate__animated animate__rotateIn" to="/login">
                 Login
               </Link> 
-              <Link className="btn btn-lg  m-2" to="/register">
+              <Link className="btn btn-lg  m-2 animate__animated animate__rotateIn" to="/register">
                 Register
               </Link>
-              <Link className="btn btn-lg  m-2" to="/cart">
-                <i class="fas fa-shopping-cart"/>
+              <Link className="btn btn-lg  m-2 animate__animated animate__bounce" to="/cart">
+              <div class="icon">
+                <i class="fa fa-shopping-basket"/>
+                </div>
               </Link>
             </>
           )}

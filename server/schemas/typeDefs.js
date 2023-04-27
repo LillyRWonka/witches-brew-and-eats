@@ -52,13 +52,18 @@ const typeDefs = gql`
     user: Users
   }
 
+  type Checkout {
+    session: ID
+  }
+
   type Query {
     categories: [Categories]
     orders: [Orders]
     menus(categoryId: ID!): [Menus]
     menu(menuId: ID!): MenuResponse
+    checkout(menus: [ID]!): Checkout
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
-   me: Users
+    me: Users
   }
 
   type Mutation {
@@ -70,6 +75,8 @@ const typeDefs = gql`
       users: ID!
       menus: ID!
     ): Reviews
+    addOrder(menus: [ID]!): Orders
+    deleteReview(review: ID!): Reviews
   }
 `;
 module.exports = typeDefs;

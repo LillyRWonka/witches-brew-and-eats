@@ -1,9 +1,11 @@
+
 footer{
-    background-image: linear-gradient(to bottom right, rgb(56, 189, 56), yellow);
+    background-image: linear-gradient(to bottom right,yellow, rgb(56, 189, 56) );
 }
 .culdron {
     width: 100px;
     height: 100px;
     position:relative;
     left: 10px;
+    animation: smoke 4s ease-out;
   }
