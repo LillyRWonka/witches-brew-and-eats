@@ -7,9 +7,10 @@ footer{
     height: 100px;
 }
 .culdron {
-    width: 100px;
+    width: 120px;
     height: 100px;
     position:relative;
     left: 10px;
+    bottom: 20px;
     animation: smoke 4s ease-out;
   }
