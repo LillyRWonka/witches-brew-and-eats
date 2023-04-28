@@ -6,7 +6,12 @@ import "../components/style/style.css";
 function App() {
   return (
   <div className='wrapper'>
-    <FoodItem1 />;
+    <FoodItem1></FoodItem1>;
+    <FoodItem1></FoodItem1>;
+    <FoodItem1></FoodItem1>;
+    <FoodItem1></FoodItem1>;
+    <FoodItem1></FoodItem1>;
+    <FoodItem1></FoodItem1>;
     </div>)
 }
 

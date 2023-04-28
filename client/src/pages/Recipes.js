@@ -5,7 +5,10 @@ import "../components/style/style.css";
 function App() {
   return (
   <div className='wrapper'>
-    <Recipe />;
+    <Recipe></Recipe>;
+    <Recipe></Recipe>;
+    <Recipe></Recipe>;
+    <Recipe></Recipe>;
     </div>)
 }
 
