@@ -2,8 +2,8 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 30px;
+  left: 50px;
   animation: smoke 4s ease-in-out infinite;
 }
 

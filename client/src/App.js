@@ -1,33 +1,40 @@
-import React from 'react';
+import React from "react";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from './pages/Home';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Cart from "./pages/Cart";
+import UserAccount from "./pages/UserAccount";
+import Header from "./components/Header/index";
+import Footer from "./components/Footer/index";
+import Stripe from "./pages/Stripe";
+import Food from "./pages/Food"
+import Drinks from "./pages/Drinks"
+import Recipes from "./pages/Recipes"
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -46,19 +53,16 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
-              <Route 
-                path="/"
-                element={<Home />}
-              />
-              <Route 
-                path="/login" 
-                element={<Login />}
-              />
-              <Route 
-                path="/register" 
-                element={<Register />}
-              />
-              </Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/food" element={<Food />} />
+              <Route path="/drinks" element={<Drinks />} />
+              <Route path="/recipes" element={<Recipes />} />
+              <Route path="/userAccount" element={<UserAccount />} />
+              <Route path="/stripe" element={<Stripe />} />
+            </Routes>
           </div>
           <Footer />
         </div>
