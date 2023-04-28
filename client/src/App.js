@@ -53,6 +53,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              
               <Route path="/cart" element={<Cart />} />
               <Route path="/userAccount" element={<UserAccount />} />
               <Route path="/stripe" element={<Stripe />} />
