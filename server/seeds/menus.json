@@ -2,7 +2,7 @@
   {
     "name": "Tea and Lavender Latte",
     "description": "This drink will increase positivity and calm throughout your day",
-    "image": "",
+    "image": "TeaandLavenderLatte.png",
     "price": 15,
     "quantity": null,
     "ingredients": "",
@@ -12,7 +12,7 @@
   {
     "name": "Rosemary Latte",
     "description": "This drink will help cleanse your spirit and mind and ward off any negative energies",
-    "image": "",
+    "image": "RosemaryLatte.png",
     "price": 15,
     "quantity": null,
     "ingredients": "",
@@ -22,7 +22,7 @@
   {
     "name": "Turmeric Soy Latte",
     "description": "This drink will give you strength and help bring happiness and abundance",
-    "image": "",
+    "image": "TurmericSoyLatte.png",
     "price": 10,
     "quantity": null,
     "ingredients": "",
@@ -32,7 +32,7 @@
   {
     "name": "Matcha Latte",
     "description": "This drink will help you get energized while keeping energies calm",
-    "image": "",
+    "image": "MatchaLatte.png",
     "price": 10,
     "quantity": null,
     "ingredients": "",
@@ -42,7 +42,7 @@
   {
     "name": "Cafe Mexicano",
     "description": "This drink will help attract positive finances and strength",
-    "image": "",
+    "image": "CafeMexicano.png",
     "price": 10,
     "quantity": null,
     "ingredients": "",
@@ -52,7 +52,7 @@
   {
     "name": "Mint Tea",
     "description": "Drink this tea for help in warding off negative energies and attracting wealth",
-    "image": "",
+    "image": "MintTea.png",
     "price": 10,
     "quantity": null,
     "ingredients": "",
@@ -62,7 +62,7 @@
   {
     "name": "Cinnamon Coffee Cake",
     "description": "Take a bite of this coffee cake for a boost in prosperity",
-    "image": "",
+    "image": "CinnamonCoffeeCake.png",
     "price": 10,
     "quantity": null,
     "ingredients": "",
@@ -72,7 +72,7 @@
   {
     "name": "Cranberry Vanilla Coffee Cake",
     "description": "A healing and soothing cake that will also bring protection with each bite",
-    "image": "",
+    "image": "CranberryVanillaCoffeeacke.png",
     "price": 20,
     "quantity": null,
     "ingredients": "",
@@ -82,7 +82,7 @@
   {
     "name": "Ube Cookies",
     "description": "Enjoy these sweet cookies that will help ground you and brighten our day",
-    "image": "",
+    "image": "UbeCookies.png",
     "price": 10,
     "quantity": null,
     "ingredients": "",
@@ -92,7 +92,7 @@
   {
     "name": "Honey Lemon Cookies",
     "description": "Cookies to help uplift he spirit and balance the sacral chakra",
-    "image": "",
+    "image": "HoneyLemonCookies.png",
     "price": 10,
     "quantity": null,
     "ingredients": "",
@@ -102,7 +102,7 @@
   {
     "name": "Baklava with Cardamom",
     "description": "A slice of our baklava will help soothe your soul and boost you with positive energy",
-    "image": "",
+    "image": "BaklavawithCardamom.png",
     "price": 18,
     "quantity": null,
     "ingredients": "",
@@ -112,7 +112,7 @@
   {
     "name": "Tres Leches Cupcakes",
     "description": "While this rich cake seems indulgent, it will help clear and soothe your soul",
-    "image": "",
+    "image": "TresLechesCupcakes.png",
     "price": 20,
     "quantity": null,
     "ingredients": "",
@@ -122,7 +122,7 @@
   {
     "name": "Moon Water",
     "description": "Moon water is water that has been blessed under the Moon. You can make this at an lunar phase!",
-    "image": "",
+    "image": "MoonWater.png",
     "price": 10,
     "quantity": null,
     "ingredients": "1. Water (it can be tap or rain water if it's safe to drink),2. 1 bowl or a glass container of any size",
@@ -132,7 +132,7 @@
   {
     "name": "Healing Potion",
     "description": "Healing potion that will soothe the body and soul",
-    "image": "",
+    "image": "HealingPotion.jpg",
     "price": 10,
     "quantity": null,
     "ingredients": "1. 1-inch piece of ginger root sliced into coins, 2.  1 tablespoon of raw honey, 3. 1 tablespoon of lemon juice, 4. 1 white or yellow candle, 5. Tea cup, 6. Water",
@@ -142,7 +142,7 @@
   {
     "name": "Love Perfume",
     "description": "Dab perfume on wrist to attract attention from those you desire.",
-    "image": "",
+    "image": "LovePerfume.jpg",
     "price": 10,
     "quantity": null,
     "ingredients": "1. sweet almond oil for a base, 2. orange essential oil for sexual energy, 3. cinnamon essential oil for lust, 4. vanilla essential oil for love  ",
