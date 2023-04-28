@@ -6,6 +6,7 @@
   - [Acceptance Criteria](#acceptance-criteria)
   - [Database Structure](#database-structure)
   - [WireFrame](#wireframe)
+  - [Technologies](#technologies)
   - [Installation](#installation)
   - [Results](#results)
   - [Reach-us](#reach-us)
@@ -70,6 +71,81 @@ Then the platform should confirm that the order will be ready within 15 minutes 
 ## WireFrame
 
 ![Display WireFrame of the Project.](./Assets/WireFrame.gif)
+
+## Technologies
+
+<table border="10">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Technology</th>
+        <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>React</td>
+            <td>Front-end</td>
+            <td>A JavaScript library for building user interfaces.</td>
+        </tr>
+        <tr>
+            <td>Node.js</td>
+            <td>Backend(server-side)</td>
+            <td>A JavaScript runtime built on Chrome's V8 JavaScript engine.</td>
+         </tr>
+         <tr>
+            <td>Express.js</td>
+            <td>Backend(server-side)</td>
+            <td>A minimal and flexible Node.js web application framework.</td>
+         </tr>
+          <tr>
+            <td>MongoDB</td>
+            <td>Backend(server-side)</td>
+            <td>A NoSQL database that stores data in flexible, JSON-like documents.</td>
+         </tr>
+         <tr>
+            <td>Mongoose</td>
+            <td>Backend(server-side)</td>
+            <td>A MongoDB object modeling tool that provides a schema-based solution to model your application data.</td>
+         </tr>
+         <tr>
+            <td>GraphQL</td>
+            <td>API</td>
+            <td>For improved API performance and efficiency.</td>
+         </tr>
+          <tr>
+            <td>NPM(Node Package Manager)</td>
+            <td>Development Tool</td>
+            <td>A package manager for the JavaScript programming language.</td>
+         </tr>
+          <tr>
+            <td>Git</td>
+            <td>Development Tool</td>
+            <td>A distributed version control system used for source code management.</td>
+         </tr>
+         <tr>
+            <td>VS Code</td>
+            <td>Development Tool</td>
+            <td>A popular source code editor developed by Microsoft.</td>
+         </tr>
+          <tr>
+            <td>JWT(JSON Web Tokens)</td>
+            <td>Other tools and technologies</td>
+            <td>A standard for securely transmitting information between parties as a JSON object.</td>
+         </tr>
+          <tr>
+            <td>Heroku</td>
+            <td>Other tools and technologies</td>
+            <td>A cloud platform as a service (PaaS) used for deploying, managing, and scaling web applications.</td>
+         </tr>  
+         <tr>
+            <td>Stripe</td>
+            <td>Payment Processing Platform</td>
+            <td>Stripe enables businesses to accept payments online</td>
+         </tr>          
+    </tbody>
+  </table>
+
 
 
 ## Installation:
