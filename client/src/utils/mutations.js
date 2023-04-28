@@ -37,3 +37,16 @@ export const ADD_REVIEW = gql`
     }
   }
 `;
+
+export const DELETE_REVIEW = gql`
+  mutation deleteReview($review: ID!) {
+    deleteReview(review: $review){
+        _id,
+        description
+        users
+        menus
+        date  
+    }
+  }
+`;
+

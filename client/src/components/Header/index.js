@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../../Assets/Logo.png";
+import logo from "../../Assets/WBELogo.png";
 import "./index.css";
 import Auth from "../../utils/auth";
 
