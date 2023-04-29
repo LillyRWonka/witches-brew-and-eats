@@ -1,0 +1,37 @@
+.prod-wrapper {
+    flex-direction: row;
+    align-items: start;
+    background-color: rgb(0, 41, 41, 0.8);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,     minmax(12rem, 24rem));
+    gap: 2rem;
+    justify-content: left;
+    padding: 1rem;
+    color: aliceblue;
+}
+
+.prod-img {
+    background-color: rgb(3, 58, 58);
+}
+
+
+.add {
+    flex-direction: row;
+}
+.prod-btn {
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 2px solid;
+    background: transparent;
+    background-color: purple;
+    border-radius: 0.2rem;
+  }
+
+  .review {
+    background-color: rgb(184, 243, 204);
+    color: rgb(1, 1, 32);
+    font-style: italic;
+  }
