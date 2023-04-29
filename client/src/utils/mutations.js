@@ -52,7 +52,7 @@ export const DELETE_REVIEW = gql`
 
 export const UPDATE_POINTS = gql`
   mutation updatePoints($id: ID!, $pointBalance: Int) {
-    updatePoints(_id: $id!, pointBalance: $pointBalance) {
+    updatePoints(_id: $id, pointBalance: $pointBalance) {
         _id,
         userName
         email
