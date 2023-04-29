@@ -28,7 +28,7 @@ export const CREATE_USER = gql`
 
 export const ADD_REVIEW = gql`
   mutation addReview($description: String!, $date: String!, $users: ID!, $menus: ID!) {
-    addReview(description: $description, date: $date, users: $users, menus: $menus){
+    addReview(description: $description, date: $date, users: $users, menus: $menus) {
       _id,
       description
       users
@@ -40,12 +40,24 @@ export const ADD_REVIEW = gql`
 
 export const DELETE_REVIEW = gql`
   mutation deleteReview($review: ID!) {
-    deleteReview(review: $review){
+    deleteReview(review: $review) {
         _id,
         description
         users
         menus
         date  
+    }
+  }
+`;
+
+export const UPDATE_POINTS = gql`
+  mutation updatePoints($id: ID!, $pointBalance: Int) {
+    updatePoints(_id: $id!, pointBalance: $pointBalance) {
+        _id,
+        userName
+        email
+        password
+        pointBalance
     }
   }
 `;
