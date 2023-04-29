@@ -1,11 +1,74 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../Assets/WBELogo.png";
 import "./index.css";
 import Auth from "../../utils/auth";
+import { useQuery } from "@apollo/client";
+import { GET_ALL_MENU } from "../../utils/queries";
 
 const Header = () => {
+  const { loading, data } = useQuery(GET_ALL_MENU);
+
+  useEffect(() => {
+    if (!loading && data) {
+      const addList = async () => {
+        const apiData = data.getAllMenus;
+        const names = apiData.map((title) => {
+          return {
+            name: title.name,
+            id: title._id,
+            category: title.category.name.toLowerCase(),
+          };
+        });
+
+        //Sort names in ascending order
+        //reference
+        let input = document.getElementById("input");
+        //Execute function on keyup
+        input.addEventListener("keyup", (e) => {
+          //loop through above array
+          //Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
+          removeElements();
+          for (let i of names) {
+            //convert input to lowercase and compare with each string
+            if (
+              input.value !== "" &&
+              i.name.toLowerCase().startsWith(input.value.toLowerCase())
+            ) {
+              console.log(i);
+              //create li element
+              let listItem = document.createElement("li");
+              //One common class name
+              listItem.classList.add("list-items");
+              listItem.style.cursor = "pointer";
+              listItem.setAttribute("onclick", () => {
+                input.value = i.name;
+                removeElements();
+                redirect(`/${i.category}/${i.id}`);
+              });
+              //Display matched part in bold
+              let word = "<b>" + i.name.substr(0, input.value.length) + "</b>";
+              word += i.name.substr(input.value.length);
+              //display the value in array
+              listItem.innerHTML = word;
+              document.querySelector(".list").appendChild(listItem);
+            }
+          }
+        });
+      };
+      addList();
+    }
+  }, [data, loading]);
+
+  const removeElements = () => {
+    //clear all the item
+    let items = document.querySelectorAll(".list-items");
+    items.forEach((item) => {
+      item.remove();
+    });
+  };
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -34,7 +97,20 @@ const Header = () => {
           </>
         ) : (
           <>
-            <input className="search-box" type="text" placeholder="Search..." />
+            <div
+              className="d-flex flex-column"
+              style={{
+                position: "relative",
+              }}
+            >
+              <input
+                className="search-box"
+                id="input"
+                type="text"
+                placeholder="Search..."
+              />
+              <ul class="list"></ul>
+            </div>
             <Link
               className="btn btn-lg m-2 text-dark animate_animated animate_rotateIn "
               to="/login"

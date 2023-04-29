@@ -75,6 +75,10 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    getAllMenus: async (parent, args, context) => {
+      // Use the parameter to find the matching menu in the collection
+      return await Menus.find({}).populate("category");
+    },
   },
   Mutation: {
     login: async (parent, { email, password }) => {
@@ -137,7 +141,7 @@ const resolvers = {
       }
       throw new AuthenticationError("Not logged in");
     },
-    updatePoints: async (parent, {pointBalance}, context) => {
+    updatePoints: async (parent, { pointBalance }, context) => {
       if (context.user) {
         return Users.findOneAndUpdate(
           { _id: context.user._id },
@@ -146,7 +150,7 @@ const resolvers = {
         );
       }
       throw new AuthenticationError("Not logged in");
-    }
+    },
   },
 };
 

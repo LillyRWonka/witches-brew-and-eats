@@ -2,26 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
 import witches from "../Assets/witches.jpg";
+import { useQuery } from "@apollo/client";
+import { GET_CATEGORIES } from "../utils/queries";
 
-const menuItems = [
-  { id: 1, title: "Drinks", link: "/drinks" },
-  { id: 2, title: "Food", link: "/food" },
-  { id: 3, title: "Recipes", link: "/recipes" },
-];
 const Home = () => {
+  const { loading, data } = useQuery(GET_CATEGORIES);
   return (
     <main className="d-flex h-100 ">
       <div className="menu-container">
         <h4 className="text-bold fs-2">Products</h4>
         <ul className="menu-items">
-          {menuItems.map((item) => (
-            <li key={item.id}>
-              <Link to={item.link}>
-                {" "}
-                <h4 className="text-bold fs-2 mb-0">{item.title}</h4>
-              </Link>
-            </li>
-          ))}
+          {loading ? (
+            <>Loading..</>
+          ) : (
+            data?.categories.map((item) => (
+              <li key={item._id}>
+                <Link to={item.name.toLowerCase()}>
+                  {" "}
+                  <h4 className="text-bold fs-2 mb-0">{item.name}</h4>
+                </Link>
+              </li>
+            ))
+          )}
         </ul>
         <img src={witches} alt="Logo" />
       </div>
