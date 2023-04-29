@@ -137,7 +137,7 @@ const resolvers = {
       }
       throw new AuthenticationError("Not logged in");
     },
-    updatePoints: async (parent, pointBalance, context) => {
+    updatePoints: async (parent, {pointBalance}, context) => {
       if (context.user) {
         return Users.findOneAndUpdate(
           { _id: context.user._id },
