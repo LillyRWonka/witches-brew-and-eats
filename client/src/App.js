@@ -17,12 +17,12 @@ import UserAccount from "./pages/UserAccount";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 import Stripe from "./pages/Stripe";
-import Food from "./pages/Food"
-import Drinks from "./pages/Drinks"
-import Recipes from "./pages/Recipes"
-import Products from "./pages/Products"
+import Food from "./pages/Food";
+import Drinks from "./pages/Drinks";
+import Recipes from "./pages/Recipes";
+import Products from "./pages/Products";
 import Product from "./components/ProductList";
-
+import "./App.css";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -59,7 +59,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/search" element={<Search/>} />
+              <Route path="/search" element={<Search />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/food" element={<Food />} />
               <Route path="/drinks" element={<Drinks />} />
