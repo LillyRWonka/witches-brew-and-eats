@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import "./login.css";
-import fiveWitches from "../Assets/fiveWitches.jpg";
+
 import Auth from "../utils/auth";
 
 const Login = (props) => {
@@ -42,18 +42,18 @@ const Login = (props) => {
   };
 
   return (
-    <main  className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
+    <main className="d-flex flex-row justify-content-center">
+      <div className="col-6 col-lg-4">
         <div className="card">
           <h4 className="card-header bg-light text-dark p-2">Login</h4>
           <div className="card-body">
             {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
-              </p>
+              <p>Success! You may now head </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form
+                className="d-flex flex-column gap-3"
+                onSubmit={handleFormSubmit}
+              >
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -64,7 +64,7 @@ const Login = (props) => {
                 />
                 <input
                   className="form-input"
-                  placeholder="******"
+                  placeholder="**"
                   name="password"
                   type="password"
                   value={formState.password}
@@ -80,12 +80,11 @@ const Login = (props) => {
                 <Link to="/register">New User, click here to Register!</Link>
               </form>
             )}
-            <div class="col-sm-6">
-            <img src={fiveWitches} alt="Logo" className="fiveWitches" /></div>
+            {/* <div class="col-sm-6">
+              <img src={fiveWitches} alt="Logo" className="fiveWitches" />
+            </div> */}
             {error && (
-              <div className="my-3 p-3 text-white">
-                {error.message}
-              </div>
+              <div className="my-3 p-3 text-white">{error.message}</div>
             )}
           </div>
         </div>
