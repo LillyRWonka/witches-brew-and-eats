@@ -11,7 +11,7 @@
   border-radius: 0.2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   cursor: pointer;
   transition: transform 200ms ease-in;
   box-sizing: border-box;
@@ -49,6 +49,6 @@ img {
     border-radius: 0.2rem;
   }
 
-  :hover .card-btn{
+  .card:hover{
     transform: scale(1.02);
   }
