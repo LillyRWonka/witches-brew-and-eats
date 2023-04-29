@@ -1,29 +1,17 @@
-import React from 'react';
-import React, { useState } from "react";
+ import React from 'react';
+// import "../components/style.css";
 
-export default function Card(drink) {
-    const cardStyle = {
-      width: '18rem',
-    };
 
-    return (
-        <div className="container">
-          <div className="card" style={cardStyle}>
-           
-            <div className="card-body">
-            <h5 className="card-title">Name: {drink.name}</h5>
-            <p><img
-              className="card-img-top"
-              src={drink.img}
-              alt="Card cap"
-            /></p>
-              <p className="card-text">ID: {drink.id}</p>
-              <a href="#" className="btn btn-primary">
-                See {drink.name}
-              </a>
-            </div>
-          </div>
-        </div>
-      );
-    }
-     
+function DrinkItem() {
+  return(
+    <div className='card'>
+      <div className='card-body'>
+        <img src="Assets\BaklavawithCardamom.png" />
+        <h2 className='card-title'>This is a drink item</h2>
+        <p className='card-description'>This is a description</p>
+      </div>
+      <button className='card-btn'>View Food</button>
+    </div>
+  )
+  }
+export default DrinkItem;

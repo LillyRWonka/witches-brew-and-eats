@@ -14,8 +14,12 @@ const Header = () => {
     <header className="text-light mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
-          <Link className="text-dark" to="/">
+          <Link to="/">
             <img src={logo} alt="Logo" className="logo" />
+          </Link>
+
+          <Link className="text-dark" to="/">
+
             <h2 className="m-0 animate__animated animate__zoomIn">
               Witches Brew and Eats
             </h2>
