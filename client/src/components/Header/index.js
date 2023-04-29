@@ -11,7 +11,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="d-flex justify-content-between mb-3 pb-3 pt-3">
+    <header className="d-flex justify-content-between pb-3 pt-3">
       <div className="d-flex align-items-center">
         <Link className="text-dark ps-5" to="/">
           <img src={logo} alt="Logo" className="logo" />

@@ -52,23 +52,23 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="flex-column justify-flex-start vh-100">
           <Header />
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/food" element={<Food />} />
-              <Route path="/drinks" element={<Drinks />} />
-              <Route path="/recipes" element={<Recipes />} />
-              <Route path="/products" element={<Product />} />
-              <Route path="/userAccount" element={<UserAccount />} />
-              <Route path="/stripe" element={<Stripe />} />
-            </Routes>
-          </div>
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/food" element={<Food />} />
+            <Route path="/drinks" element={<Drinks />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/products" element={<Product />} />
+            <Route path="/userAccount" element={<UserAccount />} />
+            <Route path="/stripe" element={<Stripe />} />
+          </Routes>
+
           <Footer />
         </div>
       </Router>

@@ -8,6 +8,9 @@ body {
 .text-bold {
   font-weight: bold;
 }
+.no-margin {
+  margin: 0;
+}
 
 footer {
   background-image: linear-gradient(to bottom right, yellow, rgb(56, 189, 56));
