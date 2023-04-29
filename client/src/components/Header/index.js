@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../Assets/WBELogo.png";
@@ -10,6 +10,12 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
+  const [cartItems] = useState([]);
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <header className="d-flex justify-content-between pb-3 pt-3">
       <div className="d-flex align-items-center">
@@ -25,12 +31,20 @@ const Header = () => {
       <div className="d-flex align-items-center">
         {Auth.loggedIn() ? (
           <>
-            <Link className="btn btn-lg btn-info m-2" to="/me">
-              {Auth.getProfile().data.username}'s profile
+            <Link className="btn btn-lg btn-success m-2" to="/userAccount">
+             <h6>Welcome to {Auth.getProfile().data.username}'s profile</h6> 
             </Link>
             <button className="btn btn-lg btn-light m-2" onClick={logout}>
               Logout
             </button>
+            <Link
+              className="btn btn-lg  m-2 animate_animated animate_bounce"
+              to="/cart"
+            >
+              <div class="icon">
+                <i class="fa fa-shopping-basket" />{totalItems} items
+              </div>
+            </Link>
           </>
         ) : (
           <>
@@ -55,8 +69,8 @@ const Header = () => {
               className="btn btn-lg  m-2 animate_animated animate_bounce"
               to="/cart"
             >
-              <div class="icon">
-                <i class="fa fa-shopping-basket" />
+              <div className="icon">
+                <i className="fa fa-shopping-basket" />{totalItems} items
               </div>
             </Link>
           </>
