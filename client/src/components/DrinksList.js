@@ -1,9 +1,9 @@
- import React from 'react';
-// import "../components/style.css";
+import React from 'react';
+import "./style/style.css";
 
 
 function DrinkItem() {
-  return(
+  return (
     <div className='card'>
       <div className='card-body'>
         <img src="Assets\BaklavawithCardamom.png" />
@@ -13,5 +13,5 @@ function DrinkItem() {
       <button className='card-btn'>View Food</button>
     </div>
   )
-  }
+}
 export default DrinkItem;
