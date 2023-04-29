@@ -17,6 +17,11 @@ import UserAccount from "./pages/UserAccount";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 import Stripe from "./pages/Stripe";
+import Food from "./pages/Food"
+import Drinks from "./pages/Drinks"
+import Recipes from "./pages/Recipes"
+import Products from "./pages/Products"
+import Product from "./components/ProductList";
 
 
 // Construct our main GraphQL API endpoint
@@ -56,6 +61,10 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/search" element={<Search/>} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/food" element={<Food />} />
+              <Route path="/drinks" element={<Drinks />} />
+              <Route path="/recipes" element={<Recipes />} />
+              <Route path="/products" element={<Product />} />
               <Route path="/userAccount" element={<UserAccount />} />
               <Route path="/stripe" element={<Stripe />} />
             </Routes>
