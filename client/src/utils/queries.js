@@ -91,3 +91,14 @@ export const QUERY_CHECKOUT = gql`
     }
   }
 `;
+export const GET_ALL_MENU = gql`
+  query getAllMenus {
+    getAllMenus {
+      _id
+      name
+      category {
+        name
+      }
+    }
+  }
+`;
