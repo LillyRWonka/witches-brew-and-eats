@@ -18,19 +18,15 @@ const resolvers = {
     },
     menus: async (parent, args, context) => {
       // Use the parameter to find the matching menu in the collection based on the category id
-      if (context.user) {
-        return await Menus.find({ category: args.categoryId });
-      }
-      throw new AuthenticationError("You need to be logged in!");
+      return await Menus.find({ category: args.categoryId }).populate(
+        "category"
+      );
     },
     menu: async (parent, args, context) => {
-      if (context.user) {
-        const menu = await Menus.findOne({ _id: args.menuId });
-        const reviews = await Reviews.find({ menus: args.menuId });
+      const menu = await Menus.findOne({ _id: args.menuId });
+      const reviews = await Reviews.find({ menus: args.menuId });
 
-        return { menu, reviews };
-      }
-      throw new AuthenticationError("You need to be logged in!");
+      return { menu, reviews };
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;

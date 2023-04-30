@@ -45,8 +45,8 @@ export const GET_ORDERS = gql`
 `;
 
 export const GET_MENU_ON_CATEGORY = gql`
-  query menus($categoryId: ID!) {
-    menus {
+  query Menus($categoryId: ID!) {
+    menus(categoryId: $categoryId) {
       _id
       name
       description
@@ -55,7 +55,10 @@ export const GET_MENU_ON_CATEGORY = gql`
       quantity
       ingredients
       steps
-      category
+      category {
+        name
+        _id
+      }
     }
   }
 `;

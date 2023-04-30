@@ -17,7 +17,7 @@ const Home = () => {
           ) : (
             data?.categories.map((item) => (
               <li key={item._id}>
-                <Link to={item.name.toLowerCase()}>
+                <Link to={`/category/${item._id}`}>
                   {" "}
                   <h4 className="text-bold fs-2 mb-0">{item.name}</h4>
                 </Link>
