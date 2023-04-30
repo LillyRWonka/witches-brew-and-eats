@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../Assets/WBELogo.png";
@@ -96,7 +96,7 @@ const Header = () => {
         {Auth.loggedIn() ? (
           <>
             <Link className="btn btn-lg btn-success m-2" to="/userAccount">
-             <h6>Welcome to {Auth.getProfile().data.username}'s profile</h6> 
+              <h6>Welcome to {Auth.getProfile().data.username}'s profile</h6>
             </Link>
             <button className="btn btn-lg btn-light m-2" onClick={logout}>
               Logout
