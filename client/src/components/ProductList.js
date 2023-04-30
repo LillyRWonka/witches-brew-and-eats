@@ -1,4 +1,5 @@
 import React from 'react';
+import NutritionInfo from './Nutrition';
 
 
 function Product() {
