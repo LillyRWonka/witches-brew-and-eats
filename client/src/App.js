@@ -16,6 +16,7 @@ import Cart from "./pages/Cart";
 import UserAccount from "./pages/UserAccount";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
+import UserPoints from "./components/UserPoints";
 import Stripe from "./pages/Stripe";
 import Food from "./pages/Food";
 import Drinks from "./pages/Drinks";
@@ -61,6 +62,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/search" element={<Search />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/userpoints" element={<UserPoints />} />
             <Route path="/food" element={<Food />} />
             <Route path="/drinks" element={<Drinks />} />
             <Route path="/recipes" element={<Recipes />} />

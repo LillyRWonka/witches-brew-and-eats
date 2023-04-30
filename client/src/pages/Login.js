@@ -45,7 +45,7 @@ const Login = (props) => {
     <main className="d-flex flex-row justify-content-center">
       <div className="col-6 col-lg-4">
         <div className="card">
-          <h4 className="card-header bg-light text-dark p-2">Login</h4>
+          <h4 className="card-header bg-light text-dark p-2">Login</h4>          
           <div className="card-body">
             {data ? (
               <p>Success! You may now head </p>
@@ -78,6 +78,7 @@ const Login = (props) => {
                   Submit
                 </button>
                 <Link to="/register">New User, click here to Register!</Link>
+                <Link to="/">Cancel!</Link>
               </form>
             )}
             {/* <div class="col-sm-6">
