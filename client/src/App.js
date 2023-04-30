@@ -67,6 +67,7 @@ function App() {
             <Route path="/products" element={<Product />} />
             <Route path="/userAccount" element={<UserAccount />} />
             <Route path="/stripe" element={<Stripe />} />
+            <Route path="/products/:id" element={<ProductView />} />
           </Routes>
 
           <Footer />
