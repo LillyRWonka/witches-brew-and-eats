@@ -23,7 +23,9 @@ const resolvers = {
       );
     },
     menu: async (parent, args, context) => {
-      const menu = await Menus.findOne({ _id: args.menuId });
+      const menu = await Menus.findOne({ _id: args.menuId }).populate(
+        "category"
+      );
       const reviews = await Reviews.find({ menus: args.menuId });
 
       return { menu, reviews };

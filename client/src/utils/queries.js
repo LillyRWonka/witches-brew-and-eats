@@ -64,25 +64,33 @@ export const GET_MENU_ON_CATEGORY = gql`
 `;
 
 export const GET_MENU_RESPONSES = gql`
-  query menu($menuId: ID!) {
-    MenuResponse {
-      menu(id: $menuId) {
-        _id
+  query Query($menuId: ID!) {
+    menu(menuId: $menuId) {
+      menu {
         name
+        _id
+        category {
+          _id
+          name
+        }
         description
         image
+        ingredients
         price
         quantity
-        ingredients
         steps
-        category
       }
       reviews {
         _id
-        description
-        users
-        menus
         date
+        description
+        users {
+          _id
+          email
+          password
+          pointBalance
+          userName
+        }
       }
     }
   }
