@@ -22,35 +22,39 @@
 .card-body {
   margin: 2rem;
 }
+
 img {
-    height: 12rem;
-    width: 100%;
-    object-fit: center;
-  }
+  height: 12rem;
+  width: 100%;
+  object-fit: center;
+}
 
 .card-title {
   font-size: large;
-    padding: 1rem;
-  }
+  padding: 1rem;
+}
 
 .card-description {
-    padding: 0 1rem;
-  }
+  padding: 0 1rem;
+}
 
 .card-btn {
-    padding: 1rem;
-    font-family: inherit;
-    font-weight: bold;
-    font-size: 1rem;
-    margin: 1rem;
-    border: 2px solid;
-    background: transparent;
-    background-color: purple;
-    border-radius: 0.2rem;
-  }
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid;
+  background: transparent;
+  background-color: purple;
+  border-radius: 0.2rem;
+}
 
-  .card:hover{
-    transform: scale(1.02);
-  }
+.card:hover {
+  transform: scale(1.02);
+}
 
-  
+.link-style {
+  text-decoration: none;
+  color: black;
+}
