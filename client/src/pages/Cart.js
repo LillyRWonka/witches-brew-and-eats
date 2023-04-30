@@ -38,6 +38,7 @@ function Cart() {
                     {cartItems.map((item) => (
                       <tr key={item.id}>
                         <td>{item.id}</td>
+                        <td>{item.image}</td>
                         <td>{item.product}</td>
                         <td>{item.quantity}</td>
                         <td>{item.price}</td>

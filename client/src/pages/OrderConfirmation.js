@@ -27,6 +27,7 @@ function OrderConfirmation() {
         <li>Order Date: {orderData.date}</li>
         <li>Order Total: {orderData.total}</li>
       </ul>
+      <p>The order will get ready in 15 minutes!</p>
     </div>
   );
 }

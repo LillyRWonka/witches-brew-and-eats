@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../utils/mutations";
 
-import Auth from "../utils/auth";
-
 const Register = () => {
   const [formState, setFormState] = useState({
-    username: "",
+    userName: "",
     email: "",
     password: "",
   });
@@ -31,30 +28,29 @@ const Register = () => {
       const { data } = await addUser({
         variables: { ...formState },
       });
-
-      Auth.login(data.addUser.token);
+      window.location.assign("/");
     } catch (e) {
       console.error(e);
     }
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-6">
+    <main className="d-flex flex-row justify-content-center">
+      <div className="col-6 col-lg-4">
         <div className="card">
           <h4 className="card-header bg-light text-dark p-2">Register!</h4>
           <div className="card-body">
             {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
-              </p>
+              <p>Success! You may now head </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form
+                className="d-flex flex-column gap-3"
+                onSubmit={handleFormSubmit}
+              >
                 <input
                   className="form-input"
                   placeholder="Your username"
-                  name="username"
+                  name="userName"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
@@ -69,7 +65,7 @@ const Register = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="******"
+                  placeholder="**"
                   name="password"
                   type="password"
                   value={formState.password}
@@ -82,6 +78,7 @@ const Register = () => {
                 >
                   Click Register
                 </button>
+                <Link to="/">Cancel!</Link>
               </form>
             )}
 

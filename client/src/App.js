@@ -11,17 +11,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Search from "./components/Search";
 import Cart from "./pages/Cart";
 import UserAccount from "./pages/UserAccount";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
+import UserPoints from "./components/UserPoints";
 import Stripe from "./pages/Stripe";
-import Food from "./pages/Food"
-import Drinks from "./pages/Drinks"
-import Recipes from "./pages/Recipes"
-import Products from "./pages/Products"
-import Product from "./components/ProductList";
-
+import Food from "./pages/Food";
+import Drinks from "./pages/Drinks";
+import Recipes from "./pages/Recipes";
+import Products from "./pages/Products";
+import ProductView from "./components/ProductList";
+import "./App.css";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -51,22 +53,25 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="flex-column justify-flex-start vh-100">
           <Header />
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/food" element={<Food />} />
-              <Route path="/drinks" element={<Drinks />} />
-              <Route path="/recipes" element={<Recipes />} />
-              <Route path="/products" element={<Product />} />
-              <Route path="/userAccount" element={<UserAccount />} />
-              <Route path="/stripe" element={<Stripe />} />
-            </Routes>
-          </div>
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/userpoints" element={<UserPoints />} />
+            <Route path="/food" element={<Food />} />
+            <Route path="/drinks" element={<Drinks />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/userAccount" element={<UserAccount />} />
+            <Route path="/stripe" element={<Stripe />} />
+            <Route path="/products/:id" element={<ProductView />} />
+          </Routes>
+
           <Footer />
         </div>
       </Router>

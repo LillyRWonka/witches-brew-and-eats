@@ -1,60 +1,72 @@
 body {
-    background-color: rgb(240, 232, 222);
-    background-image: url("https://th.bing.com/th/id/R.e9e21757b45cdad0c15f4e01e6856973?rik=MvECDa0UksJjhA&pid=ImgRaw&r=0");
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-position:center;
-  }
-  
-  p {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    overflow: hidden;
-    color:white;
-  }
-  h1 {
-    text-align: center;
-    color:rgb(232, 236, 232);
-    font-size: 36px;
-    font-weight: bold;
-    height: 10vh;
-  }
-  
-  .menu-container {
-    display: inline-block;
-    justify-content: relative;
-    align-items: left;
-    border: 1px solid #ccc;
-    background-image: linear-gradient(to bottom right,yellow, rgb(56, 189, 56) );
-   
-    }
-  
-  .menu-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;  
-  }
-  
-  .menu-items li {
-    margin-bottom: 5px;
-    border: 3px solid #0f0f0f;
-  }
-  
-  .menu-items li a {
-    color: #333;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .menu-items li a:hover {
-    text-decoration: none;
-    color: rgb(53, 230, 29);
-  }
-  .menu-container img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-  }
-  
+  background-color: rgb(240, 232, 222);
+  background-image: url("https://th.bing.com/th/id/R.e9e21757b45cdad0c15f4e01e6856973?rik=MvECDa0UksJjhA&pid=ImgRaw&r=0");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  overflow: hidden;
+  color: white;
+}
+h1 {
+  text-align: center;
+  color: rgb(232, 236, 232);
+  font-size: 36px;
+  font-weight: bold;
+  height: 10vh;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-top: 5px solid;
+  background-image: linear-gradient(to bottom right, yellow, rgb(56, 189, 56));
+}
+
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* align-items: center; */
+  width: 100%;
+}
+
+.menu-items li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 3px solid #0f0f0f;
+}
+
+.menu-items li a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-items li a:hover {
+  text-decoration: none;
+  color: rgb(53, 230, 29);
+}
+.menu-container img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+}
+.description {
+  font-size: 30px;
+  height: auto;
+}
