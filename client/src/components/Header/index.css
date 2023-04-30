@@ -19,7 +19,9 @@ header {
 
 .icon {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .icon::before,
