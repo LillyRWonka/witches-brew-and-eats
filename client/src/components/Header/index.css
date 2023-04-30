@@ -61,3 +61,20 @@ header {
   font-size: 48px;
   color: #080a05;
 }
+
+ul {
+  list-style: none;
+}
+.list {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0 0 5px 5px;
+}
+.list-items {
+  padding: 10px 5px;
+}
+.list-items:hover {
+  background-color: #dddddd;
+}
