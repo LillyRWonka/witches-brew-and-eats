@@ -1,9 +1,15 @@
 import React from 'react';
 import "./style/style.css";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
-function DrinkItem() {
+function DrinkItem({id}) {
+  const history = useHistory();
+
+  const drinkSelection = () => {
+history.push(`/products/${id}`);
+  };
+  
   return (
     <Link to="/products" className="link-style">
       <div className='card'>
