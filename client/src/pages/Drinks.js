@@ -6,6 +6,7 @@ import "../components/style/style.css";
 function App() {
   return (
   <div className='wrapper'>
+    
     <DrinkItem></DrinkItem>;
     <DrinkItem></DrinkItem>;
     <DrinkItem></DrinkItem>;
