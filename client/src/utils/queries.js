@@ -63,7 +63,7 @@ export const GET_MENU_ON_CATEGORY = gql`
 export const GET_MENU_RESPONSES = gql`
   query menu($menuId: ID!) {
     MenuResponse {
-      menu {
+      menu(id: $drinkId) {
         _id
         name
         description
