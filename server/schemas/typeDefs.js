@@ -67,6 +67,7 @@ const typeDefs = gql`
     ingredients: String
     steps: String
     category: ID
+    pdf: String
   }
 
   type Query {
