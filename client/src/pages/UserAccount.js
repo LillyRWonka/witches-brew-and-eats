@@ -1,16 +1,28 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from "../utils/auth"
+import { useQuery } from "@apollo/client";
+import { GET_ORDERS } from "../utils/queries"
+import { useParams } from 'react-router-dom';
 
 function UserAccount() {
   const [previousOrders, setPreviousOrders] = useState([]);
 
-  useEffect(() => {
-    // Fetch previous orders data from an API or a database
-    fetch('https://example.com/api/previous-orders')
-      .then(response => response.json())
-      .then(data => setPreviousOrders(data));
-  }, []);
+  const { userId } = useParams();
+
+  const { loading, data } = useQuery(GET_ORDERS);
+  console.log(data);
+  const allOrders = data?.orders || [];
+
+  const usersOrders = allOrders.filter(obj => obj.users === userId);
+  setPreviousOrders(usersOrders);
+
+  //  useEffect(() => {
+  //    // Fetch previous orders data from an API or a database
+  //    fetch('https://example.com/api/previous-orders')
+  //     .then(response => response.json())
+  //      .then(data => setPreviousOrders(data));
+  //  }, []);
   return (
     <div> 
       {Auth.loggedIn() ? (
@@ -27,10 +39,10 @@ function UserAccount() {
               </thead>
               <tbody>
                 {previousOrders.map(order => (
-                  <tr key={order.id}>
-                    <td>{order.id}</td>
+                  <tr key={order._id}>
+                    <td>{order._id}</td>
                     <td>{order.date}</td>
-                    <td>{order.total}</td>
+                    <td>{order.totalPrice}</td>
                   </tr>
                 ))}
               </tbody>
