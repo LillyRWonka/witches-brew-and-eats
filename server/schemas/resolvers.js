@@ -10,9 +10,7 @@ const resolvers = {
     },
     orders: async (parent, args, context) => {
       if (context.user) {
-        return Orders.find({ users: context.user._id })
-          .populate({ path: "menus", populate: { path: "category" } })
-          .populate("users");
+        return Orders.find({ users: context.user._id });
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -34,10 +32,10 @@ const resolvers = {
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
-      const order = new Orders({ menus: args.menus });
+      // const order = new Orders({ menus: args.menus });
       const line_items = [];
 
-      const { menus } = await order.populate("menus");
+      const menus = await Menus.find().where("_id").in(args.menus);
 
       for (let i = 0; i < menus.length; i++) {
         const product = await stripe.products.create({
@@ -103,11 +101,10 @@ const resolvers = {
 
       return { token, user };
     },
-    addReview: async (parent, { description, date, users, menus }, context) => {
+    addReview: async (parent, { description, users, menus }, context) => {
       if (context.user) {
         const review = await Reviews.create({
           description,
-          date,
           users,
           menus,
         });
@@ -118,18 +115,17 @@ const resolvers = {
     },
     addOrder: async (parent, args, context) => {
       if (context.user) {
-        const order = new Orders({ menus: args.menus });
         let total_price = 0;
-
-        const { menus } = await order.populate("menus");
-
+        const { menus } = args;
         for (let i = 0; i < menus.length; i++) {
-          total_price += menus[0].price;
+          total_price += menus[i].price * menus[i].quantity;
         }
-        order.totalPrice = total_price;
-        order.users = context.user._id;
-        order.paymentStatus = true;
-        order.save();
+        const order = Orders.create({
+          users: context.user._id,
+          menus,
+          paymentStatus: true,
+          totalPrice: total_price,
+        });
 
         return order;
       }

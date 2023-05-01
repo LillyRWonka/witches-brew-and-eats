@@ -7,8 +7,9 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks", 
-    "points": 10
+    "category": "Drinks",
+    "points": 10,
+    "pdf": ""
   },
   {
     "name": "Rosemary Latte",
@@ -18,8 +19,9 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks", 
-    "points": 10
+    "category": "Drinks",
+    "points": 10,
+    "pdf": ""
   },
   {
     "name": "Turmeric Soy Latte",
@@ -30,7 +32,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Drinks",
-    "points": 10
+    "points": 10,
+    "pdf": ""
   },
   {
     "name": "Matcha Latte",
@@ -41,7 +44,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Drinks",
-    "points": 10
+    "points": 10,
+    "pdf": ""
   },
   {
     "name": "Cafe Mexicano",
@@ -51,8 +55,9 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks", 
-    "points": 10
+    "category": "Drinks",
+    "points": 10,
+    "pdf": ""
   },
   {
     "name": "Mint Tea",
@@ -63,7 +68,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Drinks",
-    "points": 10
+    "points": 10,
+    "pdf": ""
   },
   {
     "name": "Cinnamon Coffee Cake",
@@ -74,7 +80,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Foods",
-    "points": 15
+    "points": 15,
+    "pdf": ""
   },
   {
     "name": "Cranberry Vanilla Coffee Cake",
@@ -85,7 +92,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Foods",
-    "points": 15
+    "points": 15,
+    "pdf": ""
   },
   {
     "name": "Ube Cookies",
@@ -96,7 +104,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Foods",
-    "points": 15
+    "points": 15,
+    "pdf": ""
   },
   {
     "name": "Honey Lemon Cookies",
@@ -107,7 +116,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Foods",
-    "points": 15
+    "points": 15,
+    "pdf": ""
   },
   {
     "name": "Baklava with Cardamom",
@@ -118,7 +128,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Foods",
-    "points": 15
+    "points": 15,
+    "pdf": ""
   },
   {
     "name": "Tres Leches Cupcakes",
@@ -129,7 +140,8 @@
     "ingredients": "",
     "steps": "",
     "category": "Foods",
-    "points": 15
+    "points": 15,
+    "pdf": ""
   },
   {
     "name": "Moon Water",
@@ -139,7 +151,8 @@
     "quantity": null,
     "ingredients": "1. Water (it can be tap or rain water if it's safe to drink),2. 1 bowl or a glass container of any size",
     "steps": "1. Pour water in the bowl. Use 3 cups of water or experiment with the amounts, 2. Put the bowl in a place where it will be lit by the moonlight, preferably outside, but it could be near a window inside your home.It doesn't matter if it's cloudy outside, since moonlight, just like sunlight, can pierce through the clouds easily. 3. As you place the water in the moonlight, consecrate it by saying out loud: 'Dear Moon, thanks for this Sacred Water, which is already helping me with (say your intention here)'. 4. You don't need to leave the water outside all night. Collect it before the sunlight touches it. 5. Filter out any insects that might have landed on the water and put it in a bottle. Store it in a dark place such as a kitchen cabinet or a closet until you use it.",
-    "category": "Recipes"
+    "category": "Recipes",
+    "pdf": "moonWaterRecipe.pdf"
   },
   {
     "name": "Healing Potion",
@@ -149,7 +162,8 @@
     "quantity": null,
     "ingredients": "1. 1-inch piece of ginger root sliced into coins, 2.  1 tablespoon of raw honey, 3. 1 tablespoon of lemon juice, 4. 1 white or yellow candle, 5. Tea cup, 6. Water",
     "steps": "1. Light the candle and heat the water. 2. Add the ginger root to the tea cup. 3. Add honey and lemon juice, then add water. 4. While you wait for the tea to steep, sit comfortably. 5. Take 3 deep breaths as you cecome aware of your body, your mind, and position. Say: 'I invoke the healing energy of this drink' 6. Take a sip of your tea. 7. Visualize the hot water in your tea as a high vibration that goes through your body. It detects any type of negativity both in your physical body or in your mind. 8. Say: 'I take care of my body, my mind and my emotions 'Today I am safe, relaxed and life flows joyfully 'Today my health is perfect. 9. Let the sensations flow freely as any thoughts or emotions that may appear. In this moment you are healing.",
-    "category": "Recipes"
+    "category": "Recipes",
+    "pdf": "healingPotionRecipe.pdf"
   },
   {
     "name": "Love Perfume",
@@ -159,6 +173,7 @@
     "quantity": null,
     "ingredients": "1. sweet almond oil for a base, 2. orange essential oil for sexual energy, 3. cinnamon essential oil for lust, 4. vanilla essential oil for love  ",
     "steps": "dab this perfume on your wrist when you are near someone whose attractio you desire",
-    "category": "Recipes"
+    "category": "Recipes",
+    "pdf": "lovePerfumeRecipe.jpg"
   }
 ]

@@ -4,7 +4,6 @@ const menusSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
   description: {
     type: String,
@@ -30,6 +29,9 @@ const menusSchema = new Schema({
   category: {
     type: Schema.Types.ObjectId,
     ref: "Categories",
+  },
+  pdf: {
+    type: String,
   },
 });
 
