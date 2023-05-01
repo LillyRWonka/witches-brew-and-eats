@@ -1,8 +1,8 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+  display: flex;
   gap: 2rem;
   justify-content: center;
+  margin: 10px;
 }
 
 .card {
@@ -17,10 +17,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  max-width: 300px;
+  min-height: 530px;
 }
-
-.card-body {
-  margin: 2rem;
+.card-description {
+  color: black;
 }
 
 img {
@@ -52,6 +53,12 @@ img {
 
 .card:hover {
   transform: scale(1.02);
+}
+
+.card-body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .link-style {

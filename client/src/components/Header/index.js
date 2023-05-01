@@ -1,6 +1,5 @@
-
 import React, { useEffect, useState } from "react";
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../Assets/WBELogo.png";
 import "./index.css";
@@ -10,7 +9,7 @@ import { GET_ALL_MENU } from "../../utils/queries";
 
 const Header = () => {
   const { loading, data } = useQuery(GET_ALL_MENU);
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (!loading && data) {
       const addList = async () => {
@@ -43,10 +42,10 @@ const Header = () => {
               //One common class name
               listItem.classList.add("list-items");
               listItem.style.cursor = "pointer";
-              listItem.setAttribute("onclick", () => {
-                input.value = i.name;
+              listItem.addEventListener("click", () => {
+                input.value = "";
                 removeElements();
-                redirect(`/${i.category}/${i.id}`);
+                navigate(`/products/${i.id}`);
               });
               //Display matched part in bold
               let word = "<b>" + i.name.substr(0, input.value.length) + "</b>";
@@ -60,7 +59,7 @@ const Header = () => {
       };
       addList();
     }
-  }, [data, loading]);
+  }, [data, loading, navigate]);
 
   const removeElements = () => {
     //clear all the item
@@ -95,8 +94,22 @@ const Header = () => {
       <div className="d-flex align-items-center">
         {Auth.loggedIn() ? (
           <>
+            <div
+              className="d-flex flex-column"
+              style={{
+                position: "relative",
+              }}
+            >
+              <input
+                className="search-box"
+                id="input"
+                type="text"
+                placeholder="Search..."
+              />
+              <ul class="list"></ul>
+            </div>
             <Link className="btn btn-lg btn-success m-2" to="/userAccount">
-              <h6>Welcome to {Auth.getProfile().data.username}'s profile</h6>
+              Welcome to {Auth.getProfile().data.userName}'s profile
             </Link>
             <button className="btn btn-lg btn-light m-2" onClick={logout}>
               Logout
@@ -106,7 +119,8 @@ const Header = () => {
               to="/cart"
             >
               <div class="icon">
-                <i class="fa fa-shopping-basket" />{totalItems} items
+                <i class="fa fa-shopping-basket" />
+                {totalItems} items
               </div>
             </Link>
           </>
@@ -147,7 +161,8 @@ const Header = () => {
               to="/cart"
             >
               <div className="icon">
-                <i className="fa fa-shopping-basket" />{totalItems} items
+                <i className="fa fa-shopping-basket" />
+                {totalItems} items
               </div>
             </Link>
           </>

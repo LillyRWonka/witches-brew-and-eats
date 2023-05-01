@@ -1,0 +1,36 @@
+table {
+    background-color: antiquewhite;
+    border-radius: 5px;
+}
+
+.nutritions {
+    width: auto;
+    background-color: antiquewhite;
+    color: black;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+}
+
+.performance-facts {
+    font-size: large;
+    background-color: antiquewhite;
+    border-radius: 20%;
+}
+
+
+table th {
+    border: 1px solid #ccc;
+    text-align: left;
+    background-color: antiquewhite;
+}
+
+table td {
+    border: 1px solid #ccc;
+    text-align: right;
+    background-color: antiquewhite;
+}
+
+table th b{
+    
+    background-color: antiquewhite;
+}

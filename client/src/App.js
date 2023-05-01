@@ -70,6 +70,7 @@ function App() {
             <Route path="/userAccount" element={<UserAccount />} />
             <Route path="/stripe" element={<Stripe />} />
             <Route path="/products/:id" element={<ProductView />} />
+            <Route path="/category/:id" element={<Food />} />
           </Routes>
 
           <Footer />
