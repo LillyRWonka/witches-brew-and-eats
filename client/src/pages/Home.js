@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
+import "../components/style/style.css";
 import witches from "../Assets/witches.jpg";
 import { useQuery } from "@apollo/client";
 import { GET_CATEGORIES } from "../utils/queries";

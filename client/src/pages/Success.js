@@ -42,7 +42,8 @@ function Success() {
         }}
       >
         <h1>Success!</h1>
-        <h1>Thank you for your purchase!</h1>
+        <h1>Thank you for your order!</h1>
+        <h1>The order will get ready in 15 minutes!</h1>
         <h1>You will now be redirected to the home page</h1>
       </div>
     </div>
