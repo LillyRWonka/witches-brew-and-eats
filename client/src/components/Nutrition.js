@@ -18,17 +18,8 @@ function NutritionInfo(props) {
     return <p>Loading...</p>;
   }
   return (
-    <div className="nutritions">
-      <div className="demo-result-label">
-        <div className="col-12">
-          <section className="performance-facts" id="performance-facts">
-            {/* <div className="performance-facts_header">
-              <h1 className="performance-facts_title">Nutrition Facts</h1>
-               <p>
-                <span id="lnumser">0</span>" serving per container"
-              </p> 
-            </div> */}
-            <table className="performance-facts_table">
+           <section className="performance-facts_table" id="performance-facts">
+            <table className="performance-facts">
               <thead>
                 <tr>
                   <th colspan="3" className="amps">
@@ -41,7 +32,9 @@ function NutritionInfo(props) {
                   <th colspan="2" id="lkal-val-cal">
                     <b>Calories    </b>
                   </th>
-                  <td>{Math.floor(nutData.calories)}</td>
+                  <td>
+                    <b>{Math.floor(nutData.calories)}</b>
+                    </td>
                 </tr>
                 <tr className="thick-row">
                   <td colspan="3" className="small-info">
@@ -150,10 +143,7 @@ function NutritionInfo(props) {
                 </tr>
               </tbody>
             </table>
-          </section>
-        </div>
-      </div>
-    </div>
+           </section>
   );
 }
 

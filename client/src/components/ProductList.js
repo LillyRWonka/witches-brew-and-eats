@@ -36,7 +36,6 @@ function Product() {
             <h2>Magical Effects</h2>
             <p className="">{data.menu.menu.description}</p>
             <h2>Nutritional Facts</h2>
-            {/* <p className="">These are the facts! (pull from API)</p> */}
             <NutritionInfo product={data.menu.menu.name} />
           </div>
           <div>
