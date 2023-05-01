@@ -7,7 +7,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks"
+    "category": "Drinks", 
+    "points": 10
   },
   {
     "name": "Rosemary Latte",
@@ -17,7 +18,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks"
+    "category": "Drinks", 
+    "points": 10
   },
   {
     "name": "Turmeric Soy Latte",
@@ -27,7 +29,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks"
+    "category": "Drinks",
+    "points": 10
   },
   {
     "name": "Matcha Latte",
@@ -37,7 +40,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks"
+    "category": "Drinks",
+    "points": 10
   },
   {
     "name": "Cafe Mexicano",
@@ -47,7 +51,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks"
+    "category": "Drinks", 
+    "points": 10
   },
   {
     "name": "Mint Tea",
@@ -57,7 +62,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Drinks"
+    "category": "Drinks",
+    "points": 10
   },
   {
     "name": "Cinnamon Coffee Cake",
@@ -67,7 +73,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Foods"
+    "category": "Foods",
+    "points": 15
   },
   {
     "name": "Cranberry Vanilla Coffee Cake",
@@ -77,7 +84,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Foods"
+    "category": "Foods",
+    "points": 15
   },
   {
     "name": "Ube Cookies",
@@ -87,7 +95,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Foods"
+    "category": "Foods",
+    "points": 15
   },
   {
     "name": "Honey Lemon Cookies",
@@ -97,7 +106,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Foods"
+    "category": "Foods",
+    "points": 15
   },
   {
     "name": "Baklava with Cardamom",
@@ -107,7 +117,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Foods"
+    "category": "Foods",
+    "points": 15
   },
   {
     "name": "Tres Leches Cupcakes",
@@ -117,7 +128,8 @@
     "quantity": null,
     "ingredients": "",
     "steps": "",
-    "category": "Foods"
+    "category": "Foods",
+    "points": 15
   },
   {
     "name": "Moon Water",
