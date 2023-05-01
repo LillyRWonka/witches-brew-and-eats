@@ -10,7 +10,8 @@ const resolvers = {
     },
     orders: async (parent, args, context) => {
       if (context.user) {
-        return Orders.find({ users: context.user._id });
+        const data = await Orders.find({ users: context.user._id });
+        return data;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -69,7 +70,7 @@ const resolvers = {
     //EC: Add "me" query:
     me: async (parent, args, context) => {
       if (context.user) {
-        return Users.findOne({ _id: context.user._id });
+        return await Users.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -120,7 +121,7 @@ const resolvers = {
         for (let i = 0; i < menus.length; i++) {
           total_price += menus[i].price * menus[i].quantity;
         }
-        const order = Orders.create({
+        const order = await Orders.create({
           users: context.user._id,
           menus,
           paymentStatus: true,

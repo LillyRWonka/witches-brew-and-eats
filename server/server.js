@@ -5,27 +5,6 @@ const db = require("./config/connection");
 const { authMiddleware } = require("./utils/auth");
 const { typeDefs, resolvers } = require("./schemas");
 
-//EC: for API keys
-const webpack = require("webpack");
-const dotenv = require("dotenv");
-dotenv.config();
-
-const edamamAppId = process.env.EDAMAM_APP_ID;
-const edamamAppKey = process.env.EDAMAM_APP_KEY;
-
-const compiler = webpack({
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        REACT_APP_EDAMAM_APP_ID: JSON.stringify(edamamAppId),
-        REACT_APP_EDAMAM_APP_KEY: JSON.stringify(edamamAppKey),
-      },
-    }),
-  ],
-});
-
-
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
@@ -39,6 +18,9 @@ app.use(express.json());
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
 }
 
 app.get("/", (req, res) => {
