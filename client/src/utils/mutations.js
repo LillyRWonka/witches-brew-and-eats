@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -27,12 +27,10 @@ export const CREATE_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($description: String!, $date: String!, $users: ID!, $menus: ID!) {
-    addReview(description: $description, date: $date, users: $users, menus: $menus) {
-      _id,
+  mutation AddReview($description: String!, $users: ID!, $menus: ID!) {
+    addReview(description: $description, users: $users, menus: $menus) {
+      _id
       description
-      users
-      menus
       date
     }
   }
@@ -41,11 +39,8 @@ export const ADD_REVIEW = gql`
 export const DELETE_REVIEW = gql`
   mutation deleteReview($review: ID!) {
     deleteReview(review: $review) {
-        _id,
-        description
-        users
-        menus
-        date  
+      _id
+      description
     }
   }
 `;
@@ -53,12 +48,11 @@ export const DELETE_REVIEW = gql`
 export const UPDATE_POINTS = gql`
   mutation updatePoints($id: ID!, $pointBalance: Int) {
     updatePoints(_id: $id, pointBalance: $pointBalance) {
-        _id,
-        userName
-        email
-        password
-        pointBalance
+      _id
+      userName
+      email
+      password
+      pointBalance
     }
   }
 `;
-

@@ -1,25 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_MENU_RESPONSES } from "../utils/queries";
 import NutritionInfo from "./Nutrition";
 import "./Nutrition.css";
-
+import { useMutation } from "@apollo/client";
+import { ADD_REVIEW, DELETE_REVIEW } from "../utils/mutations";
+import auth from "../utils/auth";
 
 function Product() {
+  const [review, setReview] = useState("");
+
   let { id } = useParams();
-  const { loading, data } = useQuery(GET_MENU_RESPONSES, {
+
+  const [addReview, { error }] = useMutation(ADD_REVIEW);
+  const [deleteReview] = useMutation(DELETE_REVIEW);
+
+  const { loading, data, client } = useQuery(GET_MENU_RESPONSES, {
     variables: { menuId: id },
+    fetchPolicy: "no-cache",
   });
-  console.log(data, "data");
+
+  const onReviewChandler = (e) => {
+    setReview(e.target.value);
+  };
+
+  const onReviewSubmit = async () => {
+    try {
+      client.resetStore();
+      await addReview({
+        variables: {
+          description: review,
+          users: auth.getProfile().data._id,
+          menus: data.menu.menu._id,
+        },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setReview("");
+  };
+
+  const onDeleteReview = async (id) => {
+    try {
+      client.resetStore();
+      await deleteReview({
+        variables: {
+          review: id,
+        },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div className="prod-wrapper">
       {loading ? (
         <>Loading...</>
       ) : (
         <>
-          <div className="">
-            <h1>{data.menu.menu.name}</h1>
+          <div className="product-container">
+            <h1 className="menu-title">{data.menu.menu.name}</h1>
             <div className="">
               <img
                 className="prod-img"
@@ -27,24 +71,69 @@ function Product() {
                 alt={data.menu.menu.name}
               />
               <div className="add">
-                <button className="prod-btn">Add to Order</button>
-                <button className="prod-btn">QTY</button>
-              </div>
-              <div className="magic-effects">
-              <h2>Magical Effects</h2>
-              <p className="">{data.menu.menu.description}</p>
+                <button className="btn btn-lg btn-light m-2">
+                  Add to Order
+                </button>
               </div>
             </div>
           </div>
-          <div>
-            <h2>Nutritional Facts</h2>
+          <div className="product-nutrition">
+            <div className="magic-effects">
+              <h1>Magical Effects</h1>
+              <p className="product-description">
+                {data.menu.menu.description}
+              </p>
+            </div>
+            <h1>Nutritional Facts</h1>
             <NutritionInfo product={data.menu.menu.name} />
           </div>
           <div>
-            <h2>Reviews</h2>
-            <p className="review">This is a review -Lilly</p>
-            <button className="prod-btn">Add Review</button>
-            <button className="prod-btn">Delete Review</button>
+            <h1>Reviews</h1>
+            {data.menu.reviews.map((review) => {
+              return (
+                <div className="review-container">
+                  <span className="review-user">
+                    <i className="fa fa-user" />
+                    {review.users.userName}
+                    {auth.loggedIn() &&
+                      review.users._id === auth?.getProfile()?.data?._id && (
+                        <span style={{ marginLeft: "auto" }}>
+                          <i
+                            className="fa fa-trash"
+                            onClick={() => onDeleteReview(review._id)}
+                          />
+                        </span>
+                      )}
+                  </span>
+                  <span key={review._id} className="review">
+                    {review.description}
+                  </span>
+                </div>
+              );
+            })}
+            {auth.loggedIn() ? (
+              <>
+                <textarea
+                  type="text"
+                  class="form-control review-area"
+                  placeholder="Add your review"
+                  onChange={(e) => onReviewChandler(e)}
+                >
+                  {review}
+                </textarea>
+                <button
+                  className="btn btn-lg btn-light m-2"
+                  onClick={onReviewSubmit}
+                >
+                  Add Review
+                </button>
+              </>
+            ) : (
+              <></>
+            )}
+            {error && (
+              <div className="my-3 p-3 text-white">{error.message}</div>
+            )}
           </div>
         </>
       )}

@@ -23,7 +23,6 @@ const Login = (props) => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -45,7 +44,7 @@ const Login = (props) => {
     <main className="d-flex flex-row justify-content-center">
       <div className="col-6 col-lg-4">
         <div className="card">
-          <h4 className="card-header bg-light text-dark p-2">Login</h4>          
+          <h4 className="card-header bg-light text-dark p-2">Login</h4>
           <div className="card-body">
             {data ? (
               <p>Success! You may now head </p>

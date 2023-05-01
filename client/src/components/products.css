@@ -1,40 +1,77 @@
 .prod-wrapper {
-    flex-direction: row;
-    align-items: start;
-    background-color: rgb(0, 41, 41, 0.8);
-    display: grid;
-    grid-template-columns: repeat(auto-fit,     minmax(12rem, 24rem));
-    gap: 2rem;
-    justify-content: left;
-    padding: 1rem;
-    color: aliceblue;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+
+  padding: 1rem;
+  color: white;
+  height: 100%;
+  margin: 10px;
 }
 
 .prod-img {
-    background-color: rgb(3, 58, 58);
+  width: 250px;
+  height: 250px;
 }
 
 .magic-effects {
-    text-align: center;
+  text-align: center;
 }
 
 .add {
-    flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .prod-btn {
-    padding: 1rem;
-    font-family: inherit;
-    font-weight: bold;
-    font-size: 1rem;
-    margin: 1rem;
-    border: 2px solid;
-    background: transparent;
-    background-color: purple;
-    border-radius: 0.2rem;
-  }
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid;
+  background: transparent;
+  background-color: purple;
+  border-radius: 0.2rem;
+}
 
-  .review {
-    background-color: rgb(184, 243, 204);
-    color: rgb(1, 1, 32);
-    font-style: italic;
-  }
+.review {
+  font-style: italic;
+}
+.menu-title {
+  height: auto;
+  margin: 10px;
+}
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-nutrition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-description {
+  font-size: 30px;
+}
+
+.review-area {
+  margin: 10px 0px;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

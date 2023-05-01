@@ -36,7 +36,6 @@ const Header = () => {
               input.value !== "" &&
               i.name.toLowerCase().startsWith(input.value.toLowerCase())
             ) {
-              console.log(i);
               //create li element
               let listItem = document.createElement("li");
               //One common class name

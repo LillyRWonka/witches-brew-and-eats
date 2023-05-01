@@ -17,8 +17,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  max-width: 300px;
-  min-height: 530px;
+}
+.product-card {
+  max-width: 275px;
+  min-height: 500px;
 }
 .card-description {
   color: black;
