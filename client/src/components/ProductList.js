@@ -30,13 +30,14 @@ function Product() {
                 <button className="prod-btn">Add to Order</button>
                 <button className="prod-btn">QTY</button>
               </div>
+              <div className="magic-effects">
+              <h2>Magical Effects</h2>
+              <p className="">{data.menu.menu.description}</p>
+              </div>
             </div>
           </div>
           <div>
-            <h2>Magical Effects</h2>
-            <p className="">{data.menu.menu.description}</p>
             <h2>Nutritional Facts</h2>
-            {/* <p className="">These are the facts! (pull from API)</p> */}
             <NutritionInfo product={data.menu.menu.name} />
           </div>
           <div>
