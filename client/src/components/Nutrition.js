@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getNutritionAPI } from "../utils/API";
 
+
 function NutritionInfo(props) {
   const { product } = props;
   const [nutData, setnutData] = useState({});
@@ -17,16 +18,16 @@ function NutritionInfo(props) {
     return <p>Loading...</p>;
   }
   return (
-    <div className="col-sm-5 col-demo-facts-auto">
+    <div className="nutritions">
       <div className="demo-result-label">
         <div className="col-12">
           <section className="performance-facts" id="performance-facts">
-            <div className="performance-facts_header">
+            {/* <div className="performance-facts_header">
               <h1 className="performance-facts_title">Nutrition Facts</h1>
-              <p>
+               <p>
                 <span id="lnumser">0</span>" serving per container"
-              </p>
-            </div>
+              </p> 
+            </div> */}
             <table className="performance-facts_table">
               <thead>
                 <tr>
@@ -38,9 +39,9 @@ function NutritionInfo(props) {
               <tbody>
                 <tr>
                   <th colspan="2" id="lkal-val-cal">
-                    <b>Calories</b>
+                    <b>Calories    </b>
                   </th>
-                  <td className="nob">{nutData.calories}</td>
+                  <td>{Math.floor(nutData.calories)}</td>
                 </tr>
                 <tr className="thick-row">
                   <td colspan="3" className="small-info">
@@ -49,61 +50,62 @@ function NutritionInfo(props) {
                 </tr>
                 <tr>
                   <th colspan="2">
-                    <b>Total Fat </b>
-                    `${nutData.totalNutrients.FAT.quantity} $
-                    {nutData.totalNutrients.FAT.unit}`
+                    <b>Total Fat    </b>
+                    {Math.floor(nutData.totalNutrients.FAT.quantity)}  
+                    {nutData.totalNutrients.FAT.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.FAT.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.FAT.quantity)} %</b>
                   </td>
                 </tr>
                 <tr>
-                  <td className="blank-cell"></td>
-                  <th>Saturated Fat</th>
-                  `${nutData.totalNutrients.FASAT.quantity} $
-                  {nutData.totalNutrients.FASAT.unit}`
-                  <td>
-                    <b>`${nutData.totalDaily.FASAT.quantity} %`</b>
-                  </td>
-                </tr>
-                <tr>
-                  <th colspan="2">
-                    <b>Cholesterol</b>
-                    `${nutData.totalNutrients.CHOLE.quantity} $
-                    {nutData.totalNutrients.CHOLE.unit}`
+                  <th>
+                    <b>Saturated Fat  </b>
+                  {Math.floor(nutData.totalNutrients.FASAT.quantity)} 
+                  {nutData.totalNutrients.FASAT.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.CHOLE.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.FASAT.quantity)} %</b>
                   </td>
                 </tr>
                 <tr>
                   <th colspan="2">
-                    <b>Sodium</b>
-                    `${nutData.totalNutrients.NA.quantity} $
-                    {nutData.totalNutrients.NA.unit}`
+                    <b>Cholesterol  </b>
+                    {Math.floor(nutData.totalNutrients.CHOLE.quantity)} 
+                    {nutData.totalNutrients.CHOLE.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.NA.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.CHOLE.quantity)} %</b>
                   </td>
                 </tr>
                 <tr>
                   <th colspan="2">
-                    <b>Total Carbohydrate</b>
-                    `${nutData.totalNutrients.CHOCDF.quantity} $
-                    {nutData.totalNutrients.CHOCDF.unit}`
+                    <b>Sodium  </b>
+                    {Math.floor(nutData.totalNutrients.NA.quantity)} 
+                    {nutData.totalNutrients.NA.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.CHOCDF.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.NA.quantity)} %</b>
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2">
+                    <b>Total Carbohydrate  </b>
+                    {Math.floor(nutData.totalNutrients.CHOCDF.quantity)} 
+                    {nutData.totalNutrients.CHOCDF.unit}
+                  </th>
+                  <td>
+                    <b>{Math.floor(nutData.totalDaily.CHOCDF.quantity)} %</b>
                   </td>
                 </tr>
                 <tr className="thick-end">
                   <th colspan="2">
-                    <b>Protein</b>
-                    `${nutData.totalNutrients.PROCNT.quantity} $
-                    {nutData.totalNutrients.PROCNT.unit}`
+                    <b>Protein  </b>
+                    {Math.floor(nutData.totalNutrients.PROCNT.quantity)} 
+                    {nutData.totalNutrients.PROCNT.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.PROCNT.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.PROCNT.quantity)} %</b>
                   </td>
                 </tr>
               </tbody>
@@ -112,38 +114,38 @@ function NutritionInfo(props) {
               <tbody>
                 <tr>
                   <th>
-                    Vitamin D `${nutData.totalNutrients.VITD.quantity} $
-                    {nutData.totalNutrients.VITD.unit}`
+                    Vitamin D {Math.floor(nutData.totalNutrients.VITD.quantity)} 
+                    {nutData.totalNutrients.VITD.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.VITD.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.VITD.quantity)} %</b>
                   </td>
                 </tr>
                 <tr>
                   <th>
-                    Calcium `${nutData.totalNutrients.CA.quantity} $
-                    {nutData.totalNutrients.CA.unit}`
+                    Calcium {Math.floor(nutData.totalNutrients.CA.quantity)} 
+                    {nutData.totalNutrients.CA.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.CA.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.CA.quantity)} %</b>
                   </td>
                 </tr>
                 <tr>
                   <th>
-                    Iron `${nutData.totalNutrients.FE.quantity} $
-                    {nutData.totalNutrients.FE.unit}`
+                    Iron {Math.floor(nutData.totalNutrients.FE.quantity)} 
+                    {nutData.totalNutrients.FE.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.FE.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.FE.quantity)} %</b>
                   </td>
                 </tr>
                 <tr className="thin-end">
                   <th>
-                    Potassium `${nutData.totalNutrients.K.quantity} $
-                    {nutData.totalNutrients.K.unit}`
+                    Potassium {Math.floor(nutData.totalNutrients.K.quantity)} 
+                    {nutData.totalNutrients.K.unit}
                   </th>
                   <td>
-                    <b>`${nutData.totalDaily.K.quantity} %`</b>
+                    <b>{Math.floor(nutData.totalDaily.K.quantity)} %</b>
                   </td>
                 </tr>
               </tbody>
