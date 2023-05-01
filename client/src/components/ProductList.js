@@ -7,12 +7,15 @@ import "./Nutrition.css";
 import { useMutation } from "@apollo/client";
 import { ADD_REVIEW, DELETE_REVIEW } from "../utils/mutations";
 import auth from "../utils/auth";
+import { useStoreContext } from "../utils/GlobalState";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
+import { idbPromise } from "../utils/helpers";
 
 function Product() {
   const [review, setReview] = useState("");
 
   let { id } = useParams();
-
+  const [state, dispatch] = useStoreContext();
   const [addReview, { error }] = useMutation(ADD_REVIEW);
   const [deleteReview] = useMutation(DELETE_REVIEW);
 
@@ -56,6 +59,30 @@ function Product() {
     }
   };
 
+  const addToCart = () => {
+    const { cart } = state;
+    const itemInCart = cart.find(
+      (cartItem) => cartItem._id === data.menu.menu._id
+    );
+    if (itemInCart) {
+      dispatch({
+        type: UPDATE_CART_QUANTITY,
+        _id: data.menu.menu._id,
+        quantity: parseInt(itemInCart.quantity) + 1,
+      });
+      idbPromise("cart", "put", {
+        ...itemInCart,
+        quantity: parseInt(itemInCart.quantity) + 1,
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_CART,
+        product: { ...data.menu.menu, quantity: 1 },
+      });
+      idbPromise("cart", "put", { ...data.menu.menu, quantity: 1 });
+    }
+  };
+
   return (
     <div className="prod-wrapper">
       {loading ? (
@@ -71,9 +98,24 @@ function Product() {
                 alt={data.menu.menu.name}
               />
               <div className="add">
-                <button className="btn btn-lg btn-light m-2">
-                  Add to Order
-                </button>
+                {data.menu.menu.category.name === "Recipes" ? (
+                  <a
+                    className="btn btn-lg btn-light m-2"
+                    href={require(`../Assets/${data.menu.menu.pdf}`)}
+                    download={data.menu.menu.pdf}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Download Recipes
+                  </a>
+                ) : (
+                  <button
+                    className="btn btn-lg btn-light m-2"
+                    onClick={addToCart}
+                  >
+                    Add to Order
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -85,7 +127,7 @@ function Product() {
               </p>
             </div>
             <h1>Nutritional Facts</h1>
-            <NutritionInfo product={data.menu.menu.name} />
+            {/* <NutritionInfo product={data.menu.menu.name} /> */}
           </div>
           <div>
             <h1>Reviews</h1>
@@ -96,7 +138,7 @@ function Product() {
                     <i className="fa fa-user" />
                     {review.users.userName}
                     {auth.loggedIn() &&
-                      review.users._id === auth?.getProfile()?.data?._id && (
+                      review.users._id === auth.getProfile().data._id && (
                         <span style={{ marginLeft: "auto" }}>
                           <i
                             className="fa fa-trash"
@@ -115,7 +157,7 @@ function Product() {
               <>
                 <textarea
                   type="text"
-                  class="form-control review-area"
+                  className="form-control review-area"
                   placeholder="Add your review"
                   onChange={(e) => onReviewChandler(e)}
                 >
