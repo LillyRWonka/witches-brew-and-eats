@@ -26,7 +26,9 @@ const resolvers = {
       const menu = await Menus.findOne({ _id: args.menuId }).populate(
         "category"
       );
-      const reviews = await Reviews.find({ menus: args.menuId });
+      const reviews = await Reviews.find({ menus: args.menuId }).populate(
+        "users"
+      );
 
       return { menu, reviews };
     },

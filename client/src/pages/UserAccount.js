@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Auth from "../utils/auth"
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
-import { GET_ORDERS } from "../utils/queries"
-import { useParams } from 'react-router-dom';
+import { GET_ORDERS } from "../utils/queries";
+import { useParams } from "react-router-dom";
 
 function UserAccount() {
   const [previousOrders, setPreviousOrders] = useState([]);
@@ -11,10 +11,9 @@ function UserAccount() {
   const { userId } = useParams();
 
   const { loading, data } = useQuery(GET_ORDERS);
-  console.log(data);
   const allOrders = data?.orders || [];
 
-  const usersOrders = allOrders.filter(obj => obj.users === userId);
+  const usersOrders = allOrders.filter((obj) => obj.users === userId);
   setPreviousOrders(usersOrders);
 
   //  useEffect(() => {
@@ -24,7 +23,7 @@ function UserAccount() {
   //      .then(data => setPreviousOrders(data));
   //  }, []);
   return (
-    <div> 
+    <div>
       {Auth.loggedIn() ? (
         <div>
           <h1>Previous Orders</h1>
@@ -38,7 +37,7 @@ function UserAccount() {
                 </tr>
               </thead>
               <tbody>
-                {previousOrders.map(order => (
+                {previousOrders.map((order) => (
                   <tr key={order._id}>
                     <td>{order._id}</td>
                     <td>{order.date}</td>
@@ -49,18 +48,19 @@ function UserAccount() {
             </table>
           ) : (
             <p>
-              Click here to view the user Points 
-              <Link to="/userpoints">My Rewards</Link>              
-             </p>
+              Click here to view the user Points
+              <Link to="/userpoints">My Rewards</Link>
+            </p>
           )}
         </div>
       ) : (
-        <p>You need to be logged in to view your previous orders. Please{' '}
-          <Link to="/login">Login</Link> or <Link to="/register">Register</Link>.
+        <p>
+          You need to be logged in to view your previous orders. Please{" "}
+          <Link to="/login">Login</Link> or <Link to="/register">Register</Link>
+          .
         </p>
       )}
     </div>
   );
-  
-};
+}
 export default UserAccount;

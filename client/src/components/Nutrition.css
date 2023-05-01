@@ -1,63 +1,66 @@
 table {
-    background-color: antiquewhite;
-    border-radius: 5px;
+  background-color: antiquewhite;
+  border-radius: 5px;
 }
 
 .nutritions {
-    width: auto;
-    background-color: antiquewhite;
-    color: black;
-    border-collapse: collapse;
-    margin-bottom: 5px;
+  width: auto;
+  background-color: antiquewhite;
+  color: black;
+  border-collapse: collapse;
+  margin-bottom: 5px;
 }
 
 .performance-facts {
-    border-collapse: collapse;
-    margin: 2px 0;
-    font-size: 0.9em;
-    min-width: 100px;
-    background-color: antiquewhite;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-collapse: collapse;
+  margin: 2px 0;
+  font-size: 0.9em;
+  min-width: 100px;
+  background-color: antiquewhite;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .performance-facts thead tr {
-    background-color: antiquewhite;
-    text-align: left;
-    font-weight: bold;
+  background-color: antiquewhite;
+  text-align: left;
+  font-weight: bold;
 }
 
 .performance-facts tbody tr {
-    border-bottom: 1px solid rgb(69, 123, 42)
+  border-bottom: 1px solid rgb(69, 123, 42);
 }
 
 .performance-facts tbody tr:nth-of-type(even) {
-    background-color: rgb(176, 226, 245);
+  background-color: rgb(176, 226, 245);
 }
 
 .performance-facts tbody tr:last-of-type {
-    border-bottom: 2px solid green;
+  border-bottom: 2px solid green;
 }
 
 .performance-facts tbody tr.active-row {
-     font-weight: bold;
-     color:rgb(224, 159, 241)
+  font-weight: bold;
+  color: rgb(224, 159, 241);
 }
 
 table th {
-    border: 1px solid #ccc;
-    text-align: left;
-    background-color: antiquewhite;
+  border: 1px solid #ccc;
+  text-align: left;
+  background-color: antiquewhite;
 }
 
 table td {
-    border: 1px solid #ccc;
-    text-align: right;
-    background-color: antiquewhite;
+  border: 1px solid #ccc;
+  text-align: right;
+  background-color: antiquewhite;
 }
 
-table th b{
-    
-    background-color: antiquewhite;
+table th b {
+  background-color: antiquewhite;
+}
+.performance-facts_table {
+  display: flex;
+  gap: 20px;
 }

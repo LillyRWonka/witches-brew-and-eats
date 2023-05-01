@@ -10,9 +10,8 @@
 }
 
 .prod-img {
-  background-color: rgb(3, 58, 58);
-  width: 360px;
-  height: 460px;
+  width: 250px;
+  height: 250px;
 }
 
 .magic-effects {
@@ -37,8 +36,6 @@
 }
 
 .review {
-  background-color: rgb(184, 243, 204);
-  color: rgb(1, 1, 32);
   font-style: italic;
 }
 .menu-title {
@@ -49,4 +46,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.product-nutrition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-description {
+  font-size: 30px;
+}
+
+.review-area {
+  margin: 10px 0px;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
