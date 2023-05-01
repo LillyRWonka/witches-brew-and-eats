@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_MENU_RESPONSES } from "../utils/queries";
 import NutritionInfo from "./Nutrition";
+import "./Nutrition.css";
 
 function Product() {
   let { id } = useParams();
@@ -34,8 +35,9 @@ function Product() {
           <div>
             <h2>Magical Effects</h2>
             <p className="">{data.menu.menu.description}</p>
-
-            {/* <NutritionInfo product={data.menu.menu.name} /> */}
+            <h2>Nutritional Facts</h2>
+            {/* <p className="">These are the facts! (pull from API)</p> */}
+            <NutritionInfo product={data.menu.menu.name} />
           </div>
           <div>
             <h2>Reviews</h2>
