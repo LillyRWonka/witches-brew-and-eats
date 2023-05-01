@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../../Assets/WBELogo.png";
@@ -6,10 +6,28 @@ import "./index.css";
 import Auth from "../../utils/auth";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_MENU } from "../../utils/queries";
+import { useStoreContext } from "../../utils/GlobalState";
+import { idbPromise } from "../../utils/helpers";
+import { ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 
 const Header = () => {
   const { loading, data } = useQuery(GET_ALL_MENU);
+  const [state, dispatch] = useStoreContext();
   const navigate = useNavigate();
+
+  // If the cart's length or if the dispatch function is updated, check to see if the cart is empty.
+  // If so, invoke the getCart method and populate the cart with the existing from the session
+  useEffect(() => {
+    async function getCart() {
+      const cart = await idbPromise("cart", "get");
+      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+    }
+
+    if (!state.cart.length) {
+      getCart();
+    }
+  }, [state.cart.length, dispatch]);
+
   useEffect(() => {
     if (!loading && data) {
       const addList = async () => {
@@ -72,8 +90,8 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
-  const [cartItems] = useState([]);
-  const totalItems = cartItems.reduce(
+
+  const totalItems = state.cart.reduce(
     (total, item) => total + item.quantity,
     0
   );
@@ -105,7 +123,7 @@ const Header = () => {
                 type="text"
                 placeholder="Search..."
               />
-              <ul class="list"></ul>
+              <ul className="list"></ul>
             </div>
             <Link className="btn btn-lg btn-success m-2" to="/userAccount">
               Welcome to {Auth.getProfile().data.userName}'s profile
@@ -117,8 +135,8 @@ const Header = () => {
               className="btn btn-lg  m-2 animate_animated animate_bounce"
               to="/cart"
             >
-              <div class="icon">
-                <i class="fa fa-shopping-basket" />
+              <div className="icon">
+                <i className="fa fa-shopping-basket" />
                 {totalItems} items
               </div>
             </Link>
@@ -137,7 +155,7 @@ const Header = () => {
                 type="text"
                 placeholder="Search..."
               />
-              <ul class="list"></ul>
+              <ul className="list"></ul>
             </div>
             <Link
               className="btn btn-lg m-2 text-dark animate_animated animate_rotateIn "
