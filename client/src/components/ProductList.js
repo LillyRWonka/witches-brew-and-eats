@@ -16,8 +16,8 @@ function Product() {
         <>Loading...</>
       ) : (
         <>
-          <div className="">
-            <h1>{data.menu.menu.name}</h1>
+          <div className="product-container">
+            <h1 className="menu-title">{data.menu.menu.name}</h1>
             <div className="">
               <img
                 className="prod-img"
@@ -25,17 +25,17 @@ function Product() {
                 alt={data.menu.menu.name}
               />
               <div className="add">
-                <button className="prod-btn">Add to Order</button>
-                <button className="prod-btn">QTY</button>
+                <button className="btn btn-lg btn-light m-2">
+                  Add to Order
+                </button>
               </div>
             </div>
           </div>
           <div>
             <h2>Magical Effects</h2>
             <p className="">{data.menu.menu.description}</p>
-            <h2>Nutritional Facts</h2>
-            <p className="">These are the facts! (pull from API)</p>
-            <NutritionInfo product={data.menu.menu.name} />
+
+            {/* <NutritionInfo product={data.menu.menu.name} /> */}
           </div>
           <div>
             <h2>Reviews</h2>
