@@ -127,7 +127,7 @@ function Product() {
               </p>
             </div>
             <h1>Nutritional Facts</h1>
-            {/* <NutritionInfo product={data.menu.menu.name} /> */}
+            <NutritionInfo product={data.menu.menu.name} />
           </div>
           <div>
             <h1>Reviews</h1>
