@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const Menus = require("./Menus");
 
 const ordersSchema = new Schema({
   totalPrice: {
@@ -19,13 +20,7 @@ const ordersSchema = new Schema({
     required: true,
     default: Date.now,
   },
-  menus: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Menus",
-      required: true,
-    },
-  ],
+  menus: [Menus.schema],
 });
 
 const Orders = model("Orders", ordersSchema);

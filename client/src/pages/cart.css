@@ -1,18 +1,25 @@
 table {
-    border-collapse: collapse;
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  th, td {
-    border: 1px solid black;
-    padding: 10px;
-  }
-  
-  th {
-    background-color: #333;
-    color: #27ac0d;
-  }
-  h3{
-    color:#27ac0d
-  }
+  border-collapse: collapse;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+th {
+  background-color: #333;
+  color: #27ac0d;
+}
+h3 {
+  color: #27ac0d;
+}
+.table-responsive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}

@@ -27,7 +27,6 @@ export const GET_ORDERS = gql`
       totalPrice
       paymentStatus
       date
-      users
       date
       menus {
         _id
@@ -38,7 +37,6 @@ export const GET_ORDERS = gql`
         quantity
         ingredients
         steps
-        category
       }
     }
   }
@@ -79,6 +77,7 @@ export const GET_MENU_RESPONSES = gql`
         price
         quantity
         steps
+        pdf
       }
       reviews {
         _id

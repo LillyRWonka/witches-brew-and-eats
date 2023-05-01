@@ -16,7 +16,7 @@ function App() {
       {loading ? (
         <>Loading..</>
       ) : (
-        data.menus.map((menu) => {
+        data?.menus?.map((menu) => {
           return <FoodItem menu={menu} />;
         })
       )}

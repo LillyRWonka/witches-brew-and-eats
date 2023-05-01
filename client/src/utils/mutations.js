@@ -56,3 +56,24 @@ export const UPDATE_POINTS = gql`
     }
   }
 `;
+
+export const ADD_ORDER = gql`
+  mutation AddOrder($menus: [OrderMenus]) {
+    addOrder(menus: $menus) {
+      _id
+      date
+      paymentStatus
+      totalPrice
+      menus {
+        name
+        _id
+        description
+        image
+        ingredients
+        price
+        quantity
+        steps
+      }
+    }
+  }
+`;
