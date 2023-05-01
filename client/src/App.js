@@ -11,17 +11,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Search from "./components/Search";
 import Cart from "./pages/Cart";
 import UserAccount from "./pages/UserAccount";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 import UserPoints from "./components/UserPoints";
-import Stripe from "./pages/Stripe";
 import Food from "./pages/Food";
-import Drinks from "./pages/Drinks";
-import Recipes from "./pages/Recipes";
-import Products from "./pages/Products";
 import ProductView from "./components/ProductList";
 import "./App.css";
 import { StoreProvider } from "./utils/GlobalState";
@@ -63,15 +58,9 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/search" element={<Search />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/userpoints" element={<UserPoints />} />
-              <Route path="/food" element={<Food />} />
-              <Route path="/drinks" element={<Drinks />} />
-              <Route path="/recipes" element={<Recipes />} />
-              <Route path="/products" element={<Products />} />
               <Route path="/userAccount" element={<UserAccount />} />
-              <Route path="/stripe" element={<Stripe />} />
               <Route path="/products/:id" element={<ProductView />} />
               <Route path="/category/:id" element={<Food />} />
               <Route path="/success" element={<Success />} />

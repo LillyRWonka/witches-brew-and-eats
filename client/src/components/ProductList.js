@@ -10,6 +10,7 @@ import auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
+import "./products.css";
 
 function Product() {
   const [review, setReview] = useState("");
@@ -31,13 +32,15 @@ function Product() {
   const onReviewSubmit = async () => {
     try {
       client.resetStore();
-      await addReview({
-        variables: {
-          description: review,
-          users: auth.getProfile().data._id,
-          menus: data.menu.menu._id,
-        },
-      });
+      if (review) {
+        await addReview({
+          variables: {
+            description: review,
+            users: auth.getProfile().data._id,
+            menus: data.menu.menu._id,
+          },
+        });
+      }
     } catch (e) {
       console.error(e);
     }
@@ -160,6 +163,7 @@ function Product() {
                   className="form-control review-area"
                   placeholder="Add your review"
                   onChange={(e) => onReviewChandler(e)}
+                  value={review}
                 >
                   {review}
                 </textarea>
