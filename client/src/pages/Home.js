@@ -9,7 +9,7 @@ import { GET_CATEGORIES } from "../utils/queries";
 const Home = () => {
   const { loading, data } = useQuery(GET_CATEGORIES);
   return (
-    <main className="d-flex h-100 ">
+    <main className="d-flex h-100 main-container-mobile ">
       <div className="menu-container">
         <h4 className="text-bold fs-2">Products</h4>
         <ul className="menu-items">

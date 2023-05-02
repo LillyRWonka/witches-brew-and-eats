@@ -80,3 +80,51 @@ ul {
 .list-items:hover {
   background-color: #dddddd;
 }
+
+@media only screen and (max-width: 912px) {
+  .header-container-mobile {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header-logo-mobile {
+    justify-content: center;
+  }
+  .header-container-buttons-mobile {
+    flex-direction: column;
+  }
+  .main-container-mobile {
+    flex-direction: column;
+  }
+  .description {
+    background: #5bc436;
+  }
+  .category-mobile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .prod-wrapper {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-nutrition {
+    background: green;
+  }
+  .review-mobile {
+    display: flex;
+    flex-direction: column;
+    background: green;
+    width: 100%;
+  }
+  .performance-facts_table {
+    flex-direction: column;
+  }
+  .table {
+    margin-left: auto;
+  }
+  footer {
+    position: relative !important;
+    top: 100%;
+  }
+}
