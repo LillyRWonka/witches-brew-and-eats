@@ -62,7 +62,12 @@ Then I should be able to view a list of free recipes with their ingredients and 
 Scenario 7: Order Ready Within 15 Minutes
 Given I have added items to my cart and proceeded to checkout
 When I select a pickup time
-Then the platform should confirm that the order will be ready within 15 minutes of the selected pickup time
+Then the platform should confirm that the order will be ready within 15 minutes
+
+Scenario 8: Order checkout
+Given I have added items to my cart and proceeded to checkout
+When I click the chekout button
+Then the platform should take me to the Payment gateway page
 ```
 ## Database Structure
 
@@ -156,9 +161,27 @@ Then the platform should confirm that the order will be ready within 15 minutes 
 
 ## Results:
 
-![TO-DO........](./Assets/)
+Pages - Homepage, Login, Register, Cart, Checkout and Previous Order
 
-![TO-DO........](./Assets/)
+![Pages - Homepage](./Assets/HomePage.PNG)
+
+![Pages - Login](./Assets/LoginPage.PNG)
+
+![Pages - Register](./Assets/RegisterPage.PNG)
+
+![Pages - Drinks](./Assets/DrinksPage.PNG)
+
+![Pages - Food](./Assets/FoodPage.PNG)
+
+![Pages - Recipes](./Assets/RecipesPage.PNG)
+
+![Pages - CartPage](./Assets/CartPage.PNG)
+
+![Pages - PreviousOrders](./Assets/PreviousOrder.PNG)
+
+![Pages - Add to Order](./Assets/AddtoOrder.PNG)
+
+![Pages - Payment](./Assets/Payment.PNG)
 
 ## Reach-Us
 
@@ -179,4 +202,4 @@ https://github.com/SPloganathan/witches-brew-and-eats
 
 ## App-Link
 
-TO-DO.......
+https://witches-brew-and-eats.herokuapp.com
