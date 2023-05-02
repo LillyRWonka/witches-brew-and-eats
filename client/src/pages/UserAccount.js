@@ -9,6 +9,7 @@ function UserAccount() {
     <div>
       {Auth.loggedIn() ? (
         <div
+          className="table-responsive"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -18,7 +19,7 @@ function UserAccount() {
         >
           <h1>Previous Orders</h1>
           {data?.orders?.length > 0 ? (
-            <table>
+            <table className="table">
               <thead>
                 <tr>
                   <th>Order ID</th>

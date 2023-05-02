@@ -132,7 +132,7 @@ function Product() {
             <h1>Nutritional Facts</h1>
             <NutritionInfo product={data.menu.menu.name} />
           </div>
-          <div>
+          <div className="review-mobile">
             <h1>Reviews</h1>
             {data.menu.reviews.map((review) => {
               return (

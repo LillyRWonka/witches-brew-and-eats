@@ -97,8 +97,8 @@ const Header = () => {
   );
 
   return (
-    <header className="d-flex justify-content-between pb-3 pt-3">
-      <div className="d-flex align-items-center">
+    <header className="d-flex justify-content-between pb-3 pt-3 header-container-mobile">
+      <div className="d-flex align-items-center header-logo-mobile">
         <Link className="text-dark ps-5" to="/">
           <img src={logo} alt="Logo" className="logo" />
         </Link>
@@ -108,7 +108,7 @@ const Header = () => {
           </h2>
         </Link>
       </div>
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center header-container-buttons-mobile">
         {Auth.loggedIn() ? (
           <>
             <div
