@@ -47,7 +47,7 @@ const resolvers = {
 
         const price = await stripe.prices.create({
           product: product.id,
-          unit_amount: menus[i].price * 100,
+          unit_amount: args.totalPrice * 100,
           currency: "usd",
         });
 

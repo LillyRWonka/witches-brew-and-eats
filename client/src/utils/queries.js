@@ -95,8 +95,8 @@ export const GET_MENU_RESPONSES = gql`
   }
 `;
 export const QUERY_CHECKOUT = gql`
-  query Checkout($menus: [ID]!) {
-    checkout(menus: $menus) {
+  query Checkout($menus: [ID]!, $totalPrice: Int!) {
+    checkout(menus: $menus, totalPrice: $totalPrice) {
       session
     }
   }

@@ -36,15 +36,16 @@ function Cart() {
   // Add each item id to the productIds array and then invoke the getCheckout query passing an object containing the id for all our products
   function submitCheckout() {
     const productIds = [];
-
+    let totalPrice = 0;
     cart.forEach((item) => {
+      totalPrice += item.quantity * item.price;
       for (let i = 0; i < item.quantity; i++) {
         productIds.push(item._id);
       }
     });
 
     getCheckout({
-      variables: { menus: productIds },
+      variables: { menus: productIds, totalPrice },
     });
   }
 
